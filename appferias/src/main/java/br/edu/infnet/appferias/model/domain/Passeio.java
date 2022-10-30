@@ -14,6 +14,8 @@ public class Passeio extends Plano {
 		
 		StringBuilder impressaoObjeto = new StringBuilder();
 		
+		impressaoObjeto.append(super.toString());
+		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("Local de origem: %s", localOrigem));
 		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("Local de destino: %s", localDestino));

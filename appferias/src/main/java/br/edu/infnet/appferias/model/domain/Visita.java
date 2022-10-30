@@ -11,6 +11,8 @@ public class Visita extends Plano {
 	public String toString() {
 		StringBuilder impressaoObjeto = new StringBuilder();
 
+		impressaoObjeto.append(super.toString());
+		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("Endereço: %s", endereco));
 		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("É ponto turístico: %s", ehPontoTuristico ? "Sim" : "Não"));

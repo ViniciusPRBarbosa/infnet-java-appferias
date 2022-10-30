@@ -1,5 +1,7 @@
 package br.edu.infnet.appferias;
 
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 
 import org.springframework.boot.ApplicationArguments;
@@ -19,6 +21,10 @@ public class PasseioTeste implements ApplicationRunner {
 		System.out.println("======== TESTANDO IMPRESSÃO DE PASSEIOS ========");
 		Passeio p1 = new Passeio();
 		
+		p1.titulo = "Primeiro dia em Londres";
+		p1.objetivo = "Conhecer a cidade";
+		p1.dataExecucao = LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0);
+		p1.emGrupo = false;
 		p1.localOrigem = "Apartamento de amigo";
 		p1.localDestino = "Piccadilly Circus";
 		p1.possuiPontosDeParada = true;
@@ -32,6 +38,10 @@ public class PasseioTeste implements ApplicationRunner {
 		
 		Passeio p2 = new Passeio();
 		
+		p2.titulo = "Primeiro dia em Liverpool";
+		p2.objetivo = "Conhecer a cidade";
+		p2.dataExecucao = LocalDateTime.of(2022, Month.MAY, 17, 8, 0, 0);
+		p2.emGrupo = true;
 		p2.localOrigem = "Casa de parente";
 		p2.localDestino = "World Museum";
 		p2.possuiPontosDeParada = true;
@@ -45,6 +55,10 @@ public class PasseioTeste implements ApplicationRunner {
 		
 		Passeio p3 = new Passeio();
 		
+		p3.titulo = "Segundo dia em Liverpool";
+		p3.objetivo = "Conhecer a cidade";
+		p3.dataExecucao = LocalDateTime.of(2022, Month.MAY, 18, 8, 0, 0);
+		p3.emGrupo = true;
 		p3.localOrigem = "Casa de parente";
 		p3.localDestino = "Cavern Club";
 		p3.possuiPontosDeParada = false;

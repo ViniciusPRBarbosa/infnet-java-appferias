@@ -11,6 +11,8 @@ public class Evento extends Plano {
 	public String toString() {
 		StringBuilder impressaoObjeto = new StringBuilder();
 		
+		impressaoObjeto.append(super.toString());
+		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("Descrição: %s", descricao));
 		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("Endereço: %s", endereco));
