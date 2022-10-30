@@ -3,9 +3,33 @@ package br.edu.infnet.appferias.model.domain;
 import java.util.ArrayList;
 
 public class Visita extends Plano {
-	public String endereco;
-	public boolean ehPontoTuristico;
-	public ArrayList<String> pontosDeInteresse;
+	private String endereco;
+	private boolean ehPontoTuristico;
+	private ArrayList<String> pontosDeInteresse;
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public boolean isEhPontoTuristico() {
+		return ehPontoTuristico;
+	}
+
+	public void setEhPontoTuristico(boolean ehPontoTuristico) {
+		this.ehPontoTuristico = ehPontoTuristico;
+	}
+
+	public ArrayList<String> getPontosDeInteresse() {
+		return pontosDeInteresse;
+	}
+
+	public void setPontosDeInteresse(ArrayList<String> pontosDeInteresse) {
+		this.pontosDeInteresse = pontosDeInteresse;
+	}
 
 	@Override
 	public String toString() {

@@ -1,5 +1,7 @@
 package br.edu.infnet.appferias;
 
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 
 import org.springframework.boot.ApplicationArguments;
@@ -19,35 +21,47 @@ public class PasseioTeste implements ApplicationRunner {
 		System.out.println("======== TESTANDO IMPRESSÃO DE PASSEIOS ========");
 		Passeio p1 = new Passeio();
 		
-		p1.localOrigem = "Apartamento de amigo";
-		p1.localDestino = "Piccadilly Circus";
-		p1.possuiPontosDeParada = true;
+		p1.setTitulo("Primeiro dia em Londres");
+		p1.setObjetivo("Conhecer a cidade");
+		p1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		p1.setEmGrupo(false);
+		p1.setLocalOrigem("Apartamento de amigo");
+		p1.setLocalDestino("Piccadilly Circus");
+		p1.setPossuiPontosDeParada(true);
 		
-		p1.pontosDeParada = new ArrayList<String>();
-		p1.pontosDeParada.add("Big Ben");
-		p1.pontosDeParada.add("Palacio de Buckingham");
-		p1.pontosDeParada.add("London Eye");
+		p1.setPontosDeParada(new ArrayList<String>());
+		p1.getPontosDeParada().add("Big Ben");
+		p1.getPontosDeParada().add("Palacio de Buckingham");
+		p1.getPontosDeParada().add("London Eye");
 		
 		System.out.println(p1.toString());
 		
 		Passeio p2 = new Passeio();
 		
-		p2.localOrigem = "Casa de parente";
-		p2.localDestino = "World Museum";
-		p2.possuiPontosDeParada = true;
+		p2.setTitulo("Primeiro dia em Liverpool");
+		p2.setObjetivo("Conhecer a cidade");
+		p2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 17, 8, 0, 0));
+		p2.setEmGrupo(true);
+		p2.setLocalOrigem("Casa de parente");
+		p2.setLocalDestino("World Museum");
+		p2.setPossuiPontosDeParada(true);
 		
-		p2.pontosDeParada = new ArrayList<String>();
-		p2.pontosDeParada.add("Royal Albert Dock");
-		p2.pontosDeParada.add("Museum of Liverpool");
-		p2.pontosDeParada.add("Kaspa's Liverpool");
+		p2.setPontosDeParada(new ArrayList<String>());
+		p2.getPontosDeParada().add("Royal Albert Dock");
+		p2.getPontosDeParada().add("Museum of Liverpool");
+		p2.getPontosDeParada().add("Kaspa's Liverpool");
 		
 		System.out.println(p2.toString());
 		
 		Passeio p3 = new Passeio();
 		
-		p3.localOrigem = "Casa de parente";
-		p3.localDestino = "Cavern Club";
-		p3.possuiPontosDeParada = false;
+		p3.setTitulo("Segundo dia em Liverpool");
+		p3.setObjetivo("Conhecer a cidade");
+		p3.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 18, 8, 0, 0));
+		p3.setEmGrupo(true);
+		p3.setLocalOrigem("Casa de parente");
+		p3.setLocalDestino("Cavern Club");
+		p3.setPossuiPontosDeParada(false);
 		
 		System.out.println(p3.toString());
 		

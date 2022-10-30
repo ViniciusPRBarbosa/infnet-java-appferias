@@ -24,47 +24,47 @@ public class PlanoTeste implements ApplicationRunner {
 		
 		Passeio p1 = new Passeio();
 		
-		p1.titulo = "Primeiro dia em Londres";
-		p1.objetivo = "Conhecer a cidade";
-		p1.dataExecucao = LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0);
-		p1.emGrupo = false;
-		p1.localOrigem = "Apartamento de amigo";
-		p1.localDestino = "Piccadilly Circus";
-		p1.possuiPontosDeParada = true;
+		p1.setTitulo("Primeiro dia em Londres");
+		p1.setObjetivo("Conhecer a cidade");
+		p1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		p1.setEmGrupo(false);
+		p1.setLocalOrigem("Apartamento de amigo");
+		p1.setLocalDestino("Piccadilly Circus");
+		p1.setPossuiPontosDeParada(true);
 		
-		p1.pontosDeParada = new ArrayList<String>();
-		p1.pontosDeParada.add("Big Ben");
-		p1.pontosDeParada.add("Palacio de Buckingham");
-		p1.pontosDeParada.add("London Eye");
+		p1.setPontosDeParada(new ArrayList<String>());
+		p1.getPontosDeParada().add("Big Ben");
+		p1.getPontosDeParada().add("Palacio de Buckingham");
+		p1.getPontosDeParada().add("London Eye");
 		
 		System.out.println(p1.toString());
 		
 		Visita v1 = new Visita();
 		
-		v1.titulo = "Visita a Keukenhof";
-		v1.objetivo = "Conhecer o parque das tulipas";
-		v1.dataExecucao = LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0);
-		v1.emGrupo = false;
-		v1.endereco = "Lisse, Netherlands";
-		v1.ehPontoTuristico = true;
+		v1.setTitulo("Visita a Keukenhof");
+		v1.setObjetivo("Conhecer o parque das tulipas");
+		v1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0));
+		v1.setEmGrupo(false);
+		v1.setEndereco("Lisse, Netherlands");
+		v1.setEhPontoTuristico(true);
 		
-		v1.pontosDeInteresse = new ArrayList<String>();
-		v1.pontosDeInteresse.add("Tirar fotos");
-		v1.pontosDeInteresse.add("Provar achocolatado e croissants");
-		v1.pontosDeInteresse.add("Entrar em labirintos");
+		v1.setPontosDeInteresse(new ArrayList<String>());
+		v1.getPontosDeInteresse().add("Tirar fotos");
+		v1.getPontosDeInteresse().add("Provar achocolatado e croissants");
+		v1.getPontosDeInteresse().add("Entrar em labirintos");
 		
 		System.out.println(v1.toString());
 		
 		Evento e1 = new Evento();
 		
-		e1.titulo = "Pontos turísticos de Londres - London Eye";
-		e1.objetivo = "Tirar fotos";
-		e1.dataExecucao = LocalDateTime.of(2022, Month.MAY, 4, 8, 0, 0);
-		e1.emGrupo = true;
-		e1.descricao = "Volta do London Eye";
-		e1.endereco = "Riverside Building, County Hall, Londres";
-		e1.ehPago = true;
-		e1.custoIngresso = 450;
+		e1.setTitulo("Pontos turísticos de Londres - London Eye");
+		e1.setObjetivo("Tirar fotos");
+		e1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 4, 8, 0, 0));
+		e1.setEmGrupo(true);
+		e1.setDescricao("Volta do London Eye");
+		e1.setEndereco("Riverside Building, County Hall, Londres");
+		e1.setEhPago(true);
+		e1.setCustoIngresso(450);
 		
 		System.out.println(e1.toString());
 	}

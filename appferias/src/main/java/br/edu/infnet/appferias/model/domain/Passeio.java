@@ -4,11 +4,43 @@ import java.util.ArrayList;
 
 public class Passeio extends Plano {
 	
-	public String localOrigem;
-	public String localDestino;
-	public boolean possuiPontosDeParada;
-	public ArrayList<String> pontosDeParada;
+	private String localOrigem;
+	private String localDestino;
+	private boolean possuiPontosDeParada;
+	private ArrayList<String> pontosDeParada;
 	
+	public String getLocalOrigem() {
+		return localOrigem;
+	}
+
+	public void setLocalOrigem(String localOrigem) {
+		this.localOrigem = localOrigem;
+	}
+
+	public String getLocalDestino() {
+		return localDestino;
+	}
+
+	public void setLocalDestino(String localDestino) {
+		this.localDestino = localDestino;
+	}
+
+	public boolean isPossuiPontosDeParada() {
+		return possuiPontosDeParada;
+	}
+
+	public void setPossuiPontosDeParada(boolean possuiPontosDeParada) {
+		this.possuiPontosDeParada = possuiPontosDeParada;
+	}
+
+	public ArrayList<String> getPontosDeParada() {
+		return pontosDeParada;
+	}
+
+	public void setPontosDeParada(ArrayList<String> pontosDeParada) {
+		this.pontosDeParada = pontosDeParada;
+	}
+
 	@Override
 	public String toString() {
 		

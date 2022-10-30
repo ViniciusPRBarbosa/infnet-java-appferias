@@ -5,11 +5,43 @@ import java.time.format.DateTimeFormatter;
 
 public class PlanejamentoFerias {
 	
-	public String titulo;
-	public LocalDateTime dataInicio;
-	public LocalDateTime dataFim;
-	public String descricao;
+	private String titulo;
+	private LocalDateTime dataInicio;
+	private LocalDateTime dataFim;
+	private String descricao;
 	
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public LocalDateTime getDataInicio() {
+		return dataInicio;
+	}
+
+	public void setDataInicio(LocalDateTime dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+	public LocalDateTime getDataFim() {
+		return dataFim;
+	}
+
+	public void setDataFim(LocalDateTime dataFim) {
+		this.dataFim = dataFim;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 	@Override
 	public String toString() {
 		

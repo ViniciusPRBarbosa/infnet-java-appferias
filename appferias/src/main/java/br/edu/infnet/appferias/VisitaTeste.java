@@ -1,5 +1,7 @@
 package br.edu.infnet.appferias;
 
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 
 import org.springframework.boot.ApplicationArguments;
@@ -20,35 +22,47 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		Visita v1 = new Visita();
 		
-		v1.endereco = "Studio Tour Dr, Leavesden, Watford WD25 7LR, United Kingdom";
-		v1.ehPontoTuristico = true;
+		v1.setTitulo("Primeira visita na Europa");
+		v1.setObjetivo("Visitar a prima");
+		v1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		v1.setEmGrupo(true);
+		v1.setEndereco("Studio Tour Dr, Leavesden, Watford WD25 7LR, United Kingdom");
+		v1.setEhPontoTuristico(true);
 		
-		v1.pontosDeInteresse = new ArrayList<String>();
-		v1.pontosDeInteresse.add("Tirar fotos");
-		v1.pontosDeInteresse.add("Provar cerveja amateigada");
-		v1.pontosDeInteresse.add("Comprar brides");
+		v1.setPontosDeInteresse(new ArrayList<String>());
+		v1.getPontosDeInteresse().add("Tirar fotos");
+		v1.getPontosDeInteresse().add("Provar cerveja amateigada");
+		v1.getPontosDeInteresse().add("Comprar brides");
 		
 		System.out.println(v1.toString());
 		
 		Visita v2 = new Visita();
 		
-		v2.endereco = "Lisse, Netherlands";
-		v2.ehPontoTuristico = true;
+		v2.setTitulo("Visita a Keukenhof");
+		v2.setObjetivo("Conhecer o parque das tulipas");
+		v2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0));
+		v2.setEmGrupo(false);
+		v2.setEndereco("Lisse, Netherlands");
+		v2.setEhPontoTuristico(true);
 		
-		v2.pontosDeInteresse = new ArrayList<String>();
-		v2.pontosDeInteresse.add("Tirar fotos");
-		v2.pontosDeInteresse.add("Provar achocolatado e croissants");
-		v2.pontosDeInteresse.add("Entrar em labirintos");
+		v2.setPontosDeInteresse(new ArrayList<String>());
+		v2.getPontosDeInteresse().add("Tirar fotos");
+		v2.getPontosDeInteresse().add("Provar achocolatado e croissants");
+		v2.getPontosDeInteresse().add("Entrar em labirintos");
 		
 		System.out.println(v2.toString());
 		
 		Visita v3 = new Visita();
 		
-		v3.endereco = "Reimenhof 41, 3530 Houthalen-Helchteren";
-		v3.ehPontoTuristico = false;
+		v3.setTitulo("Visitar a prima");
+		v3.setObjetivo("Conhecer a prima");
+		v3.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0));
+		v3.setEmGrupo(true);
+		v3.setEndereco("Reimenhof 41, 3530 Houthalen-Helchteren");
+		v3.setEhPontoTuristico(false);
 		
-		v3.pontosDeInteresse = new ArrayList<String>();
-		v3.pontosDeInteresse.add("Almoçar em família");
+		v3.setPontosDeInteresse(new ArrayList<String>());
+		v3.getPontosDeInteresse().add("Almoçar em família");
 		
 		System.out.println(v3.toString());
 		

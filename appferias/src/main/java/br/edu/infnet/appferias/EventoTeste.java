@@ -1,5 +1,8 @@
 package br.edu.infnet.appferias;
 
+import java.time.LocalDateTime;
+import java.time.Month;
+
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -18,27 +21,39 @@ public class EventoTeste implements ApplicationRunner {
 		
 		Evento e1 = new Evento();
 		
-		e1.descricao = "Troca da guarda da Rainha";
-		e1.endereco = "Palacio de Buckingham";
-		e1.ehPago = false;
+		e1.setTitulo("Primeiro dia em Londres");
+		e1.setObjetivo("Conhecer a cidade");
+		e1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		e1.setEmGrupo(false);
+		e1.setDescricao("Troca da guarda da Rainha");
+		e1.setEndereco("Palacio de Buckingham");
+		e1.setEhPago(false);
 		
 		System.out.println(e1.toString());
 		
 		Evento e2 = new Evento();
 		
-		e2.descricao = "Volta do London Eye";
-		e2.endereco = "Riverside Building, County Hall, Londres";
-		e2.ehPago = true;
-		e2.custoIngresso = 450;
+		e2.setTitulo("Segundo dia em Londres");
+		e2.setObjetivo("Conhecer a cidade");
+		e2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 4, 8, 0, 0));
+		e2.setEmGrupo(false);
+		e2.setDescricao("Volta do London Eye");
+		e2.setEndereco("Riverside Building, County Hall, Londres");
+		e2.setEhPago(true);
+		e2.setCustoIngresso(450);
 		
 		System.out.println(e2.toString());
 		
 		Evento e3 = new Evento();
 		
-		e3.descricao = "Show do Metallica";
-		e3.endereco = "Twickenham Stadium, Londres";
-		e3.ehPago = true;
-		e3.custoIngresso = 15;
+		e3.setTitulo("Primeiro show na Europa");
+		e3.setObjetivo("Ir a um show da banda preferida");
+		e3.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 8, 8, 0, 0));
+		e3.setEmGrupo(true);
+		e3.setDescricao("Show do Metallica");
+		e3.setEndereco("Twickenham Stadium, Londres");
+		e3.setEhPago(true);
+		e3.setCustoIngresso(15);
 		
 		System.out.println(e3.toString());
 		

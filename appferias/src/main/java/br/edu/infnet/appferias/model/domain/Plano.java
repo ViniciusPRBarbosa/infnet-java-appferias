@@ -4,10 +4,42 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class Plano {
-	public String titulo;
-	public String objetivo;
-	public LocalDateTime dataExecucao;
-	public Boolean emGrupo = null;
+	private String titulo;
+	private String objetivo;
+	private LocalDateTime dataExecucao;
+	private Boolean emGrupo = null;
+	
+	public String getTitulo() {
+		return this.titulo;
+	}
+	
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	
+	public String getObjetivo() {
+		return objetivo;
+	}
+
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
+	}
+
+	public LocalDateTime getDataExecucao() {
+		return dataExecucao;
+	}
+
+	public void setDataExecucao(LocalDateTime dataExecucao) {
+		this.dataExecucao = dataExecucao;
+	}
+
+	public Boolean getEmGrupo() {
+		return emGrupo;
+	}
+
+	public void setEmGrupo(Boolean emGrupo) {
+		this.emGrupo = emGrupo;
+	}
 	
 	@Override
 	public String toString() {

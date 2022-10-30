@@ -4,11 +4,43 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Turista {
-	public String nome;
-	public String email;
-	public LocalDateTime dataNascimento;
-	public boolean possuiPassaporte;
+	private String nome;
+	private String email;
+	private LocalDateTime dataNascimento;
+	private boolean possuiPassaporte;
 	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public LocalDateTime getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDateTime dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public boolean isPossuiPassaporte() {
+		return possuiPassaporte;
+	}
+
+	public void setPossuiPassaporte(boolean possuiPassaporte) {
+		this.possuiPassaporte = possuiPassaporte;
+	}
+
 	@Override
 	public String toString() {
 		
