@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appferias.controller.PasseioController;
 import br.edu.infnet.appferias.model.domain.Passeio;
 
 @Order(1)
@@ -34,6 +35,7 @@ public class PasseioTeste implements ApplicationRunner {
 		p1.getPontosDeParada().add("Palacio de Buckingham");
 		p1.getPontosDeParada().add("London Eye");
 		
+		PasseioController.incluir(p1);
 		System.out.println(p1.toString());
 		
 		Passeio p2 = new Passeio();
@@ -51,18 +53,20 @@ public class PasseioTeste implements ApplicationRunner {
 		p2.getPontosDeParada().add("Museum of Liverpool");
 		p2.getPontosDeParada().add("Kaspa's Liverpool");
 		
+		PasseioController.incluir(p2);
 		System.out.println(p2.toString());
 		
 		Passeio p3 = new Passeio();
 		
-		p3.setTitulo("Segundo dia em Liverpool");
-		p3.setObjetivo("Conhecer a cidade");
+		p3.setTitulo("Cidades próximas a Liverpool");
+		p3.setObjetivo("Conhecer cidades próximas de Liverpool");
 		p3.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 18, 8, 0, 0));
 		p3.setEmGrupo(true);
 		p3.setLocalOrigem("Casa de parente");
 		p3.setLocalDestino("Cavern Club");
 		p3.setPossuiPontosDeParada(false);
 		
+		PasseioController.incluir(p3);
 		System.out.println(p3.toString());
 		
 		System.out.println("\n");

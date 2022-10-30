@@ -8,6 +8,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appferias.controller.EventoController;
 import br.edu.infnet.appferias.model.domain.Evento;
 
 @Order(2)
@@ -29,6 +30,7 @@ public class EventoTeste implements ApplicationRunner {
 		e1.setEndereco("Palacio de Buckingham");
 		e1.setEhPago(false);
 		
+		EventoController.incluir(e1);
 		System.out.println(e1.toString());
 		
 		Evento e2 = new Evento();
@@ -42,6 +44,7 @@ public class EventoTeste implements ApplicationRunner {
 		e2.setEhPago(true);
 		e2.setCustoIngresso(450);
 		
+		EventoController.incluir(e2);
 		System.out.println(e2.toString());
 		
 		Evento e3 = new Evento();
@@ -55,6 +58,7 @@ public class EventoTeste implements ApplicationRunner {
 		e3.setEhPago(true);
 		e3.setCustoIngresso(15);
 		
+		EventoController.incluir(e3);
 		System.out.println(e3.toString());
 		
 		System.out.println("\n");

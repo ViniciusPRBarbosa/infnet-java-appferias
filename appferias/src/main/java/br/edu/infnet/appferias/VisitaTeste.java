@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appferias.controller.VisitaController;
 import br.edu.infnet.appferias.model.domain.Visita;
 
 @Order(3)
@@ -34,6 +35,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v1.getPontosDeInteresse().add("Provar cerveja amateigada");
 		v1.getPontosDeInteresse().add("Comprar brides");
 		
+		VisitaController.incluir(v1);
 		System.out.println(v1.toString());
 		
 		Visita v2 = new Visita();
@@ -50,6 +52,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v2.getPontosDeInteresse().add("Provar achocolatado e croissants");
 		v2.getPontosDeInteresse().add("Entrar em labirintos");
 		
+		VisitaController.incluir(v2);
 		System.out.println(v2.toString());
 		
 		Visita v3 = new Visita();
@@ -64,6 +67,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v3.setPontosDeInteresse(new ArrayList<String>());
 		v3.getPontosDeInteresse().add("Almoçar em família");
 		
+		VisitaController.incluir(v3);
 		System.out.println(v3.toString());
 		
 		System.out.println("\n");

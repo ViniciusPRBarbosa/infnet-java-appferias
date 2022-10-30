@@ -10,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appferias.controller.PlanejamentoFeriasController;
 import br.edu.infnet.appferias.model.domain.Evento;
 import br.edu.infnet.appferias.model.domain.Passeio;
 import br.edu.infnet.appferias.model.domain.PlanejamentoFerias;
@@ -95,6 +96,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		p1.setTurista(t1);		
 		p1.setPlanos(planosDoPrimeiroPlanejamento);
 		
+		PlanejamentoFeriasController.incluir(p1);
 		System.out.println(p1.toString());
 		
 		Turista t2 = new Turista();
@@ -113,6 +115,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		p2.setPlanos(planosDoSegundoPlanejamento);
 		
+		PlanejamentoFeriasController.incluir(p2);
 		System.out.println(p2.toString());
 		
 		PlanejamentoFerias p3 = new PlanejamentoFerias();
@@ -130,6 +133,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		p3.setPlanos(planosDoTerceiroPlanejamento);
 		
+		PlanejamentoFeriasController.incluir(p3);
 		System.out.println(p3.toString());
 		
 		System.out.println("\n");
