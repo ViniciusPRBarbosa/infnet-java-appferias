@@ -1,7 +1,5 @@
 package br.edu.infnet.appferias;
 
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 
 import org.springframework.boot.ApplicationArguments;
@@ -22,10 +20,6 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		Visita v1 = new Visita();
 		
-		v1.titulo = "Primeira visita na Europa";
-		v1.objetivo = "Visitar a prima";
-		v1.dataExecucao = LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0);
-		v1.emGrupo = true;
 		v1.endereco = "Studio Tour Dr, Leavesden, Watford WD25 7LR, United Kingdom";
 		v1.ehPontoTuristico = true;
 		
@@ -38,10 +32,6 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		Visita v2 = new Visita();
 		
-		v2.titulo = "Visita a Keukenhof";
-		v2.objetivo = "Conhecer o parque das tulipas";
-		v2.dataExecucao = LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0);
-		v2.emGrupo = false;
 		v2.endereco = "Lisse, Netherlands";
 		v2.ehPontoTuristico = true;
 		
@@ -54,10 +44,6 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		Visita v3 = new Visita();
 		
-		v3.titulo = "Visitar a prima";
-		v3.objetivo = "Conhecer a prima";
-		v3.dataExecucao = LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0);
-		v3.emGrupo = true;
 		v3.endereco = "Reimenhof 41, 3530 Houthalen-Helchteren";
 		v3.ehPontoTuristico = false;
 		

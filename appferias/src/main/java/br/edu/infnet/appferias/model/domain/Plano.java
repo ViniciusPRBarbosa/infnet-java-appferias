@@ -7,7 +7,7 @@ public abstract class Plano {
 	public String titulo;
 	public String objetivo;
 	public LocalDateTime dataExecucao;
-	public boolean emGrupo;
+	public Boolean emGrupo = null;
 	
 	@Override
 	public String toString() {
@@ -16,13 +16,26 @@ public abstract class Plano {
 		
 		StringBuilder impressaoObjeto = new StringBuilder();
 		
-		impressaoObjeto.append(String.format("Titulo: %s", titulo));
-		impressaoObjeto.append("\n");
-		impressaoObjeto.append(String.format("Objetivo: %s", objetivo));
-		impressaoObjeto.append("\n");
-		impressaoObjeto.append(String.format("Data de execução: %s", dataExecucao.format(formatter)));
-		impressaoObjeto.append("\n");
-		impressaoObjeto.append(String.format("Em grupo? %s", emGrupo ? "Sim": "Não"));
+		if(titulo != null)
+		{
+			impressaoObjeto.append(String.format("Titulo: %s", titulo));
+			impressaoObjeto.append("\n");
+		}
+		
+		if(objetivo != null)
+		{
+			impressaoObjeto.append(String.format("Objetivo: %s", objetivo));
+			impressaoObjeto.append("\n");
+		}
+		
+		if(dataExecucao != null)
+		{
+			impressaoObjeto.append(String.format("Data de execução: %s", dataExecucao.format(formatter)));
+			impressaoObjeto.append("\n");
+		}
+		
+		if(emGrupo != null)
+			impressaoObjeto.append(String.format("Em grupo? %s", emGrupo ? "Sim": "Não"));
 		
 		return impressaoObjeto.toString();
 	}
