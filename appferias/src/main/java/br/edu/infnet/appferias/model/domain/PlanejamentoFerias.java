@@ -2,6 +2,7 @@ package br.edu.infnet.appferias.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class PlanejamentoFerias {
 	
@@ -10,7 +11,16 @@ public class PlanejamentoFerias {
 	private LocalDateTime dataFim;
 	private String descricao;
 	private Turista turista;
+	private List<Plano> planos;
 	
+	public List<Plano> getPlanos() {
+		return planos;
+	}
+
+	public void setPlanos(List<Plano> planos) {
+		this.planos = planos;
+	}
+
 	public PlanejamentoFerias() {
 		titulo = "Novo planejamento de férias";
 		dataInicio = LocalDateTime.now();
@@ -81,6 +91,21 @@ public class PlanejamentoFerias {
 		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("Data final: %s", dataFim.format(formatter)));
 		impressaoObjeto.append("\n");
+		
+		if((planos != null) && (planos.size() > 0))
+		{
+			impressaoObjeto.append("\n");
+			impressaoObjeto.append(String.format("Planos (%s no total):", planos.size()));
+			
+			for (Plano plano : planos) {
+				impressaoObjeto.append("\n");
+				impressaoObjeto.append(plano);
+			}
+		}
+		else {
+			impressaoObjeto.append("\n");
+			impressaoObjeto.append("Não há nenhum plano cadastrado.");
+		}	
 		
 		return impressaoObjeto.toString();
 	}
