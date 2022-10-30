@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,27 @@
 </head>
 <body>
 	<div class="container mt-3">
-	  <h3>Planejamentos de férias: ${listagem.size()}</h3>	  
+	  <h3>Planejamentos de férias</h3>
+	  <table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Título</th>
+					<th>Data inicial</th>
+					<th>Data final</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="planejamento" items="${listagem}">
+					<tr>
+						<td>${planejamento.titulo}</td>
+						<td>${planejamento.dataInicio}</td>
+						<td>${planejamento.dataFim}</td>
+						<td>${planejamento.descricao}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>	  
 	</div>
 </body>
 </html>
