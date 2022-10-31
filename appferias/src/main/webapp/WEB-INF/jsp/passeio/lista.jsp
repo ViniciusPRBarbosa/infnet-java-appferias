@@ -23,6 +23,7 @@
 					<th>Local de origem</th>
 					<th>Local de destino</th>
 					<th>Possui pontos de parada?</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,6 +36,7 @@
 						<td>${passeio.localOrigem}</td>
 						<td>${passeio.localDestino}</td>
 						<td>${passeio.possuiPontosDeParada}</td>
+						<td><a href="/passeio/${passeio.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

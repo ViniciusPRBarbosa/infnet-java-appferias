@@ -19,6 +19,7 @@
 					<th>É pago?</th>
 					<th>Custo do ingresso</th>
 					<th>Endereço</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,6 +30,7 @@
 						<td>${evento.ehPago}</td>
 						<td>${evento.custoIngresso}</td>
 						<td>${evento.endereco}</td>
+						<td><a href="/evento/${evento.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

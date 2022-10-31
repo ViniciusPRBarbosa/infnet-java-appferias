@@ -21,6 +21,7 @@
 					<th>E-mail</th>
 					<th>Data de Nascimento</th>
 					<th>Possui passaporte?</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,6 +32,7 @@
 						<td>${turista.email}</td>
 						<td>${turista.dataNascimento}</td>
 						<td>${turista.possuiPassaporte}</td>
+						<td><a href="/turista/${turista.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -29,6 +29,7 @@
 						<td>${planejamento.dataInicio}</td>
 						<td>${planejamento.dataFim}</td>
 						<td>${planejamento.descricao}</td>
+						<td><a href="/planejamentoferias/${planejamento.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

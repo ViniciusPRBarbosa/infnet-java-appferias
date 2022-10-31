@@ -21,6 +21,7 @@
 					<th>Objetivo</th>
 					<th>Data de execução</th>
 					<th>Em grupo?</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -31,6 +32,7 @@
 						<td>${plano.objetivo}</td>
 						<td>${plano.dataExecucao}</td>
 						<td>${plano.emGrupo}</td>
+						<td><a href="/plano/${plano.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

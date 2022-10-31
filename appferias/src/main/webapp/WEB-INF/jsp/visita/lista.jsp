@@ -17,6 +17,7 @@
 					<th>ID</th>
 					<th>Endereco</th>
 					<th>É ponto turistico?</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -25,6 +26,7 @@
 						<td>${visita.id}</td>
 						<td>${visita.endereco}</td>
 						<td>${visita.ehPontoTuristico}</td>
+						<td><a href="/visita/${visita.id}/excluir">excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
