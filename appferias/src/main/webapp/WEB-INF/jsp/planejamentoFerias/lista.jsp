@@ -14,6 +14,7 @@
 	  <table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Título</th>
 					<th>Data inicial</th>
 					<th>Data final</th>
@@ -23,6 +24,7 @@
 			<tbody>
 				<c:forEach var="planejamento" items="${listagem}">
 					<tr>
+						<td>${planejamento.id}</td>
 						<td>${planejamento.titulo}</td>
 						<td>${planejamento.dataInicio}</td>
 						<td>${planejamento.dataFim}</td>

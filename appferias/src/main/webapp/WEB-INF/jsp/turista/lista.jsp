@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Nome</th>
 					<th>E-mail</th>
 					<th>Data de Nascimento</th>
@@ -25,6 +26,7 @@
 			<tbody>
 				<c:forEach var="turista" items="${listagem}">
 					<tr>
+						<td>${turista.id}</td>
 						<td>${turista.nome}</td>
 						<td>${turista.email}</td>
 						<td>${turista.dataNascimento}</td>

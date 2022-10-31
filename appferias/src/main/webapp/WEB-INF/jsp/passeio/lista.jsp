@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Titulo</th>
 					<th>Data de execução</th>
 					<th>Em grupo?</th>
@@ -27,6 +28,7 @@
 			<tbody>
 				<c:forEach var="passeio" items="${listagem}">
 					<tr>
+						<td>${passeio.id}</td>
 						<td>${passeio.titulo}</td>
 						<td>${passeio.dataExecucao}</td>
 						<td>${passeio.emGrupo}</td>

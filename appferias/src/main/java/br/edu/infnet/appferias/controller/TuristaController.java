@@ -1,7 +1,8 @@
 package br.edu.infnet.appferias.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,16 +13,22 @@ import br.edu.infnet.appferias.model.domain.Turista;
 @Controller
 public class TuristaController {
 	
-	private static List<Turista> turistas = new ArrayList<Turista>();
+	private static Map<Integer, Turista> mapa = new HashMap<Integer, Turista>();
+	private static Integer id = 1;
 	
 	public static void incluir(Turista turista) {
-		turistas.add(turista);
+		turista.setId(id++);
+		mapa.put(turista.getId(), turista);
+	}
+
+	public static Collection<Turista> obterLista(){
+		return mapa.values();
 	}
 	
 	@GetMapping(value = "/turista/lista")
 	public String telaLista(Model model) {
 		
-		model.addAttribute("listagem", turistas);
+		model.addAttribute("listagem", obterLista());
 		
 		return "turista/lista";
 	}

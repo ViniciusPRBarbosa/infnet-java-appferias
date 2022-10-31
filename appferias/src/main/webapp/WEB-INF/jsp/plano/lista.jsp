@@ -16,6 +16,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Título</th>
 					<th>Objetivo</th>
 					<th>Data de execução</th>
@@ -25,6 +26,7 @@
 			<tbody>
 				<c:forEach var="plano" items="${listagem}">
 					<tr>
+						<td>${plano.id}</td>
 						<td>${plano.titulo}</td>
 						<td>${plano.objetivo}</td>
 						<td>${plano.dataExecucao}</td>

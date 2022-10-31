@@ -6,6 +6,7 @@ import java.util.List;
 
 public class PlanejamentoFerias {
 	
+	private Integer id;
 	private String titulo;
 	private LocalDateTime dataInicio;
 	private LocalDateTime dataFim;
@@ -13,6 +14,14 @@ public class PlanejamentoFerias {
 	private Turista turista;
 	private List<Plano> planos;
 	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public List<Plano> getPlanos() {
 		return planos;
 	}
@@ -77,6 +86,8 @@ public class PlanejamentoFerias {
 		
 		StringBuilder impressaoObjeto = new StringBuilder();
 		
+		impressaoObjeto.append(String.format("Id do planejamento: %s", id));
+		impressaoObjeto.append("\n");
 		impressaoObjeto.append("Informações do turista:");
 		impressaoObjeto.append("\n");
 		impressaoObjeto.append(turista);

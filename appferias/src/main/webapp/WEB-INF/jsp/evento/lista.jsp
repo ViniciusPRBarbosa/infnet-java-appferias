@@ -14,6 +14,7 @@
 	  <table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Descrição</th>
 					<th>É pago?</th>
 					<th>Custo do ingresso</th>
@@ -23,6 +24,7 @@
 			<tbody>
 				<c:forEach var="evento" items="${listagem}">
 					<tr>
+						<td>${evento.id}</td>
 						<td>${evento.descricao}</td>
 						<td>${evento.ehPago}</td>
 						<td>${evento.custoIngresso}</td>

@@ -4,10 +4,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Turista {
+	private Integer id;
 	private String nome;
 	private String email;
 	private LocalDateTime dataNascimento;
 	private boolean possuiPassaporte;
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 	public String getNome() {
 		return nome;
@@ -48,6 +57,8 @@ public class Turista {
 		
 		StringBuilder impressaoObjeto = new StringBuilder();
 		
+		impressaoObjeto.append(String.format("Id: %s", id));
+		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("Nome: %s", nome));
 		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("E-mail: %s", email));

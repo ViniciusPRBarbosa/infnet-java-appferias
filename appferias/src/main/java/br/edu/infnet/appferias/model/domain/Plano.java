@@ -4,10 +4,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class Plano {
+	private Integer id;
 	private String titulo;
 	private String objetivo;
 	private LocalDateTime dataExecucao;
 	private Boolean emGrupo = null;
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 	public String getTitulo() {
 		return this.titulo;
@@ -47,6 +56,12 @@ public abstract class Plano {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 		StringBuilder impressaoObjeto = new StringBuilder();
+		
+		if(id != null)
+		{
+			impressaoObjeto.append(String.format("Id: %s", id));
+			impressaoObjeto.append("\n");
+		}
 		
 		if(titulo != null)
 		{

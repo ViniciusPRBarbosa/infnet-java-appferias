@@ -14,6 +14,7 @@
 	  <table class="table table-striped">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Endereco</th>
 					<th>É ponto turistico?</th>
 				</tr>
@@ -21,6 +22,7 @@
 			<tbody>
 				<c:forEach var="visita" items="${listagem}">
 					<tr>
+						<td>${visita.id}</td>
 						<td>${visita.endereco}</td>
 						<td>${visita.ehPontoTuristico}</td>
 					</tr>
