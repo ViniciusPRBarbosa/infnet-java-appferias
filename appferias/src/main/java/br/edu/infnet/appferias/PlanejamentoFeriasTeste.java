@@ -37,7 +37,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		pa1.setTitulo("Primeiro dia em Londres");
 		pa1.setObjetivo("Conhecer a cidade");
-		pa1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		pa1.setDataExecucao("2022-03-03");
 		pa1.setEmGrupo(false);
 		pa1.setLocalOrigem("Apartamento de amigo");
 		pa1.setLocalDestino("Piccadilly Circus");
@@ -52,7 +52,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		v1.setTitulo("Visita a Keukenhof");
 		v1.setObjetivo("Conhecer o parque das tulipas");
-		v1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0));
+		v1.setDataExecucao("2022-03-15");
 		v1.setEmGrupo(false);
 		v1.setEndereco("Lisse, Netherlands");
 		v1.setEhPontoTuristico(true);
@@ -66,7 +66,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		e1.setTitulo("Pontos turísticos de Londres - London Eye");
 		e1.setObjetivo("Tirar fotos");
-		e1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 4, 8, 0, 0));
+		e1.setDataExecucao("2022-03-04");
 		e1.setEmGrupo(true);
 		e1.setDescricao("Volta do London Eye");
 		e1.setEndereco("Riverside Building, County Hall, Londres");
@@ -91,7 +91,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t1.setNome("Vinícius Pereira Reis Barbosa");
 		t1.setEmail("vinicius.barbosa@emailteste.com");
 		t1.setPossuiPassaporte(true);
-		t1.setDataNascimento(LocalDateTime.of(1990, Month.APRIL, 30, 0, 0, 0));
+		t1.setDataNascimento("1990-04-30");
 
 		p1.setTitulo("Primeira viagem para a Europa");
 		p1.setDescricao("Viagem para a Europa, com visita a parentes e a locais turisticos.");
@@ -108,7 +108,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t2.setNome("Bernard Pereira dos Reis Barbosa");
 		t2.setEmail("bernard.barbosa@emailteste.com");
 		t2.setPossuiPassaporte(false);
-		t2.setDataNascimento(LocalDateTime.of(1996, Month.DECEMBER, 23, 0, 0, 0));
+		t2.setDataNascimento("1996-12-23");
 		
 		PlanejamentoFerias p2 = new PlanejamentoFerias(t2);
 		
@@ -129,7 +129,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t3.setNome("Marina Garcia de Vechi");
 		t3.setEmail("marina.vechi@emailteste.com");
 		t3.setPossuiPassaporte(true);
-		t3.setDataNascimento(LocalDateTime.of(1991, Month.MARCH, 1, 0, 0, 0));
+		t3.setDataNascimento("1991-03-01");
 		
 		p3.setDescricao("Viagem para cidade natal, para visita a parentes e a locais de infância.");
 		p3.setDataFim(LocalDateTime.of(2022, Month.DECEMBER, 27, 23, 59, 0));

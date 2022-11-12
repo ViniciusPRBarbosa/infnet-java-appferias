@@ -1,8 +1,5 @@
 package br.edu.infnet.appferias;
 
-import java.time.LocalDateTime;
-import java.time.Month;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -29,7 +26,7 @@ public class TuristaTeste implements ApplicationRunner {
 		t1.setNome("Vinícius Pereira Reis Barbosa");
 		t1.setEmail("vinicius.barbosa@email.com");
 		t1.setPossuiPassaporte(true);
-		t1.setDataNascimento(LocalDateTime.of(1990, Month.APRIL, 30, 0, 0, 0));
+		t1.setDataNascimento("1990-04-30");
 
 		turistaService.incluir(t1);
 		System.out.println(t1.toString());
@@ -39,7 +36,7 @@ public class TuristaTeste implements ApplicationRunner {
 		t2.setNome("Bernard Pereira dos Reis Barbosa");
 		t2.setEmail("bernard.barbosa@email.com");
 		t2.setPossuiPassaporte(false);
-		t2.setDataNascimento(LocalDateTime.of(1996, Month.DECEMBER, 23, 0, 0, 0));
+		t2.setDataNascimento("1996-12-26");
 
 		turistaService.incluir(t2);
 		System.out.println(t2.toString());
@@ -49,7 +46,7 @@ public class TuristaTeste implements ApplicationRunner {
 		t3.setNome("Marina Garcia de Vechi");
 		t3.setEmail("marina.vechi@email.com");
 		t3.setPossuiPassaporte(true);
-		t3.setDataNascimento(LocalDateTime.of(1991, Month.MARCH, 1, 0, 0, 0));
+		t3.setDataNascimento("1991-03-01");
 
 		turistaService.incluir(t3);
 		System.out.println(t3.toString());

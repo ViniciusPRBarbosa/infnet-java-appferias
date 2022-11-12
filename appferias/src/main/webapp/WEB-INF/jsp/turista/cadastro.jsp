@@ -6,13 +6,13 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<title>Cadastramento de usuários</title>
+	<title>Cadastramento de turistas</title>
 </head>
 	<body>
 		<c:import url="/WEB-INF/jsp/menu.jsp"/>
 		<div class="container">
-	  <h2>Usuário</h2>
-	  <form action="/usuario/incluir" method="post">
+	  <h2>Turista</h2>
+	  <form action="/turista/incluir" method="post">
 		<div class="form-group">
 			<label>Nome:</label>
 			<input type="text"	class="form-control" placeholder="Insira o nome" name="nome">
@@ -22,8 +22,11 @@
 			<input type="email" class="form-control" placeholder="Insira o e-mail" name="email">
 		</div>
 		<div class="form-group">
-			<label>Senha:</label>
-			<input type="password" class="form-control" placeholder="Insira a senha" name="senha">
+			<label>Data de nascimento:</label>
+			<input type="date" class="form-control" name="dataNascimento">
+		</div>
+		<div class="form-group">
+			<label class="checkbox">Possui passaporte?<input type="checkbox" name="possuiPassaporte"></label>
 		</div>
 		<button type="submit" class="btn btn-default">Cadastrar</button>
 	</form>

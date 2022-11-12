@@ -1,7 +1,5 @@
 package br.edu.infnet.appferias;
 
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +26,7 @@ public class PasseioTeste implements ApplicationRunner {
 		
 		p1.setTitulo("Primeiro dia em Bruxelas");
 		p1.setObjetivo("Conhecer a cidade");
-		p1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		p1.setDataExecucao("2022-03-02");
 		p1.setEmGrupo(false);
 		p1.setLocalOrigem("Rodoviária da cidade");
 		p1.setLocalDestino("Praça principal");
@@ -46,7 +44,7 @@ public class PasseioTeste implements ApplicationRunner {
 		
 		p2.setTitulo("Primeiro dia em Liverpool");
 		p2.setObjetivo("Conhecer a cidade");
-		p2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 17, 8, 0, 0));
+		p2.setDataExecucao("2022-05-17");
 		p2.setEmGrupo(true);
 		p2.setLocalOrigem("Casa de parente");
 		p2.setLocalDestino("World Museum");
@@ -64,7 +62,7 @@ public class PasseioTeste implements ApplicationRunner {
 		
 		p3.setTitulo("Cidades próximas a Liverpool");
 		p3.setObjetivo("Conhecer cidades próximas de Liverpool");
-		p3.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 18, 8, 0, 0));
+		p3.setDataExecucao("2022-03-18");
 		p3.setEmGrupo(true);
 		p3.setLocalOrigem("Casa de parente");
 		p3.setLocalDestino("Cavern Club");

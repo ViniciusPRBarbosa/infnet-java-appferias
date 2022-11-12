@@ -11,7 +11,7 @@ public class Passeio extends Plano {
 	
 	private String localOrigem;
 	private String localDestino;
-	private boolean possuiPontosDeParada;
+	private boolean possuiPontosDeParada = false;
 	private ArrayList<String> pontosDeParada;
 	
 	public String getLocalOrigem() {

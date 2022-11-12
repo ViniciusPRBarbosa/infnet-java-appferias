@@ -18,7 +18,7 @@
 					<th>ID</th>
 					<th>Nome</th>
 					<th>E-mail</th>
-					<th>Data de Nascimento</th>
+ 					<th>Data de Nascimento</th>
 					<th>Possui passaporte?</th>
 					<th></th>
 				</tr>

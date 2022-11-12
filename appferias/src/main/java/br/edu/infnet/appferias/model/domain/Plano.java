@@ -21,7 +21,7 @@ public abstract class Plano {
 	private String titulo;
 	private String objetivo;
 	private LocalDateTime dataExecucao;
-	private Boolean emGrupo = null;
+	private Boolean emGrupo = false;
 	
 	public Integer getId() {
 		return id;
@@ -51,8 +51,9 @@ public abstract class Plano {
 		return dataExecucao;
 	}
 
-	public void setDataExecucao(LocalDateTime dataExecucao) {
-		this.dataExecucao = dataExecucao;
+	public void setDataExecucao(String dataExecucao) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		this.dataExecucao = LocalDateTime.parse(String.format("%s 00:00:00", dataExecucao), formatter);
 	}
 
 	public Boolean getEmGrupo() {

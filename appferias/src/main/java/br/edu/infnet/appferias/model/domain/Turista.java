@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tturista")
-public class Turista {
+public class Turista {	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -44,12 +44,13 @@ public class Turista {
 		this.email = email;
 	}
 
-	public LocalDateTime getDataNascimento() {
+	public LocalDateTime getDataNascimento() {		
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(LocalDateTime dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setDataNascimento(String dataNascimento) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		this.dataNascimento = LocalDateTime.parse(String.format("%s 00:00:00", dataNascimento), formatter);
 	}
 
 	public boolean isPossuiPassaporte() {
@@ -62,9 +63,7 @@ public class Turista {
 
 	@Override
 	public String toString() {
-		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		StringBuilder impressaoObjeto = new StringBuilder();
 		
 		impressaoObjeto.append(String.format("Id: %s", id));

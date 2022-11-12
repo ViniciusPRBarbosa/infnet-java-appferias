@@ -1,8 +1,5 @@
 package br.edu.infnet.appferias;
 
-import java.time.LocalDateTime;
-import java.time.Month;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -28,7 +25,7 @@ public class EventoTeste implements ApplicationRunner {
 		
 		e1.setTitulo("Primeiro dia em Londres");
 		e1.setObjetivo("Conhecer a cidade");
-		e1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		e1.setDataExecucao("2022-03-03");
 		e1.setEmGrupo(false);
 		e1.setDescricao("Troca da guarda da Rainha");
 		e1.setEndereco("Palacio de Buckingham");
@@ -41,7 +38,7 @@ public class EventoTeste implements ApplicationRunner {
 		
 		e2.setTitulo("Terceiro dia em Londres");
 		e2.setObjetivo("Assistir filme no cinema");
-		e2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 4, 8, 0, 0));
+		e2.setDataExecucao("2022-03-04");
 		e2.setEmGrupo(false);
 		e2.setDescricao("Assistir a Dr Estranho no Multiverso da Loucura");
 		e2.setEndereco("Riverside Building, County Hall, Londres");
@@ -55,7 +52,7 @@ public class EventoTeste implements ApplicationRunner {
 		
 		e3.setTitulo("Primeiro show na Europa");
 		e3.setObjetivo("Ir a um show da banda preferida");
-		e3.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 8, 8, 0, 0));
+		e3.setDataExecucao("2022-03-08");
 		e3.setEmGrupo(true);
 		e3.setDescricao("Show do Metallica");
 		e3.setEndereco("Twickenham Stadium, Londres");

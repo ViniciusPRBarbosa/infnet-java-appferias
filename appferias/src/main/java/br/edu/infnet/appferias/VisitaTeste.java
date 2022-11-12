@@ -1,7 +1,5 @@
 package br.edu.infnet.appferias;
 
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +27,7 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		v1.setTitulo("Primeira visita na Europa");
 		v1.setObjetivo("Visitar a prima");
-		v1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
+		v1.setDataExecucao("2022-03-03");
 		v1.setEmGrupo(true);
 		v1.setEndereco("Studio Tour Dr, Leavesden, Watford WD25 7LR, United Kingdom");
 		v1.setEhPontoTuristico(true);
@@ -46,7 +44,7 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		v2.setTitulo("Visita a Bruge");
 		v2.setObjetivo("Fazer passeio de barco");
-		v2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0));
+		v2.setDataExecucao("2022-03-15");
 		v2.setEmGrupo(false);
 		v2.setEndereco("Bruge, Belgium");
 		v2.setEhPontoTuristico(true);
@@ -61,7 +59,7 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		v3.setTitulo("Visitar a prima");
 		v3.setObjetivo("Conhecer a prima");
-		v3.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0));
+		v3.setDataExecucao("2022-03-15");
 		v3.setEmGrupo(true);
 		v3.setEndereco("Reimenhof 41, 3530 Houthalen-Helchteren");
 		v3.setEhPontoTuristico(false);
