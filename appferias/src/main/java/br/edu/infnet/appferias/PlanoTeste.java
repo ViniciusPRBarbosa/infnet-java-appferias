@@ -4,20 +4,24 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appferias.controller.PlanoController;
 import br.edu.infnet.appferias.model.domain.Evento;
 import br.edu.infnet.appferias.model.domain.Passeio;
 import br.edu.infnet.appferias.model.domain.Visita;
+import br.edu.infnet.appferias.model.service.PlanoService;
 
 @Order(6)
 @Component
 public class PlanoTeste implements ApplicationRunner {
 
+	@Autowired
+	private PlanoService planoService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
@@ -38,7 +42,7 @@ public class PlanoTeste implements ApplicationRunner {
 		p1.getPontosDeParada().add("Palacio de Buckingham");
 		p1.getPontosDeParada().add("London Eye");
 		
-		PlanoController.incluir(p1);
+		planoService.incluir(p1);
 		System.out.println(p1.toString());
 		
 		Visita v1 = new Visita();
@@ -55,7 +59,7 @@ public class PlanoTeste implements ApplicationRunner {
 		v1.getPontosDeInteresse().add("Provar achocolatado e croissants");
 		v1.getPontosDeInteresse().add("Entrar em labirintos");
 		
-		PlanoController.incluir(v1);
+		planoService.incluir(v1);
 		System.out.println(v1.toString());
 		
 		Evento e1 = new Evento();
@@ -69,7 +73,7 @@ public class PlanoTeste implements ApplicationRunner {
 		e1.setEhPago(true);
 		e1.setCustoIngresso(450);
 		
-		PlanoController.incluir(e1);
+		planoService.incluir(e1);
 		System.out.println(e1.toString());
 	}
 

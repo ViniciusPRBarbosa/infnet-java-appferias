@@ -4,18 +4,22 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appferias.controller.PasseioController;
 import br.edu.infnet.appferias.model.domain.Passeio;
+import br.edu.infnet.appferias.model.service.PasseioService;
 
 @Order(1)
 @Component
 public class PasseioTeste implements ApplicationRunner {
 
+	@Autowired
+	private PasseioService passeioService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
@@ -35,7 +39,7 @@ public class PasseioTeste implements ApplicationRunner {
 		p1.getPontosDeParada().add("Palacio de Buckingham");
 		p1.getPontosDeParada().add("London Eye");
 		
-		PasseioController.incluir(p1);
+		passeioService.incluir(p1);
 		System.out.println(p1.toString());
 		
 		Passeio p2 = new Passeio();
@@ -53,7 +57,7 @@ public class PasseioTeste implements ApplicationRunner {
 		p2.getPontosDeParada().add("Museum of Liverpool");
 		p2.getPontosDeParada().add("Kaspa's Liverpool");
 		
-		PasseioController.incluir(p2);
+		passeioService.incluir(p2);
 		System.out.println(p2.toString());
 		
 		Passeio p3 = new Passeio();
@@ -66,7 +70,7 @@ public class PasseioTeste implements ApplicationRunner {
 		p3.setLocalDestino("Cavern Club");
 		p3.setPossuiPontosDeParada(false);
 		
-		PasseioController.incluir(p3);
+		passeioService.incluir(p3);
 		System.out.println(p3.toString());
 		
 		System.out.println("\n");

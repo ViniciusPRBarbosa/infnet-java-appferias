@@ -5,23 +5,27 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appferias.controller.PlanejamentoFeriasController;
 import br.edu.infnet.appferias.model.domain.Evento;
 import br.edu.infnet.appferias.model.domain.Passeio;
 import br.edu.infnet.appferias.model.domain.PlanejamentoFerias;
 import br.edu.infnet.appferias.model.domain.Plano;
 import br.edu.infnet.appferias.model.domain.Turista;
 import br.edu.infnet.appferias.model.domain.Visita;
+import br.edu.infnet.appferias.model.service.PlanejamentoFeriasService;
 
 @Order(4)
 @Component
 public class PlanejamentoFeriasTeste implements ApplicationRunner {
 
+	@Autowired
+	private PlanejamentoFeriasService planejamentoFeriasService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
@@ -96,7 +100,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		p1.setTurista(t1);		
 		p1.setPlanos(planosDoPrimeiroPlanejamento);
 		
-		PlanejamentoFeriasController.incluir(p1);
+		planejamentoFeriasService.incluir(p1);
 		System.out.println(p1.toString());
 		
 		Turista t2 = new Turista();
@@ -115,7 +119,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		p2.setPlanos(planosDoSegundoPlanejamento);
 		
-		PlanejamentoFeriasController.incluir(p2);
+		planejamentoFeriasService.incluir(p2);
 		System.out.println(p2.toString());
 		
 		PlanejamentoFerias p3 = new PlanejamentoFerias();
@@ -133,7 +137,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		p3.setPlanos(planosDoTerceiroPlanejamento);
 		
-		PlanejamentoFeriasController.incluir(p3);
+		planejamentoFeriasService.incluir(p3);
 		System.out.println(p3.toString());
 		
 		System.out.println("\n");

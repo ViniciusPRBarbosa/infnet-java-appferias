@@ -4,18 +4,22 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.appferias.controller.VisitaController;
 import br.edu.infnet.appferias.model.domain.Visita;
+import br.edu.infnet.appferias.model.service.VisitaService;
 
 @Order(3)
 @Component
 public class VisitaTeste implements ApplicationRunner {
 
+	@Autowired
+	private VisitaService visitaService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
@@ -35,7 +39,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v1.getPontosDeInteresse().add("Provar cerveja amateigada");
 		v1.getPontosDeInteresse().add("Comprar brides");
 		
-		VisitaController.incluir(v1);
+		visitaService.incluir(v1);
 		System.out.println(v1.toString());
 		
 		Visita v2 = new Visita();
@@ -52,7 +56,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v2.getPontosDeInteresse().add("Provar achocolatado e croissants");
 		v2.getPontosDeInteresse().add("Entrar em labirintos");
 		
-		VisitaController.incluir(v2);
+		visitaService.incluir(v2);
 		System.out.println(v2.toString());
 		
 		Visita v3 = new Visita();
@@ -67,7 +71,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v3.setPontosDeInteresse(new ArrayList<String>());
 		v3.getPontosDeInteresse().add("Almoçar em família");
 		
-		VisitaController.incluir(v3);
+		visitaService.incluir(v3);
 		System.out.println(v3.toString());
 		
 		System.out.println("\n");
