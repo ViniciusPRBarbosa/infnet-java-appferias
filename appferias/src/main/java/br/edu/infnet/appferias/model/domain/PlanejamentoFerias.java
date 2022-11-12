@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class PlanejamentoFerias {
-	
 	private Integer id;
 	private String titulo;
 	private LocalDateTime dataInicio;

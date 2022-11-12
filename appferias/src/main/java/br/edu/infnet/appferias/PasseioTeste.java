@@ -26,12 +26,12 @@ public class PasseioTeste implements ApplicationRunner {
 		System.out.println("======== TESTANDO IMPRESSÃO DE PASSEIOS ========");
 		Passeio p1 = new Passeio();
 		
-		p1.setTitulo("Primeiro dia em Londres");
+		p1.setTitulo("Primeiro dia em Bruxelas");
 		p1.setObjetivo("Conhecer a cidade");
 		p1.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 3, 8, 0, 0));
 		p1.setEmGrupo(false);
-		p1.setLocalOrigem("Apartamento de amigo");
-		p1.setLocalDestino("Piccadilly Circus");
+		p1.setLocalOrigem("Rodoviária da cidade");
+		p1.setLocalDestino("Praça principal");
 		p1.setPossuiPontosDeParada(true);
 		
 		p1.setPontosDeParada(new ArrayList<String>());

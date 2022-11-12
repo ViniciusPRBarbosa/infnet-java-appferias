@@ -39,14 +39,14 @@ public class EventoTeste implements ApplicationRunner {
 		
 		Evento e2 = new Evento();
 		
-		e2.setTitulo("Segundo dia em Londres");
-		e2.setObjetivo("Conhecer a cidade");
+		e2.setTitulo("Terceiro dia em Londres");
+		e2.setObjetivo("Assistir filme no cinema");
 		e2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 4, 8, 0, 0));
 		e2.setEmGrupo(false);
-		e2.setDescricao("Volta do London Eye");
+		e2.setDescricao("Assistir a Dr Estranho no Multiverso da Loucura");
 		e2.setEndereco("Riverside Building, County Hall, Londres");
 		e2.setEhPago(true);
-		e2.setCustoIngresso(450);
+		e2.setCustoIngresso(10);
 		
 		eventoService.incluir(e2);
 		System.out.println(e2.toString());

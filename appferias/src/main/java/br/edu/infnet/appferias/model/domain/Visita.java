@@ -2,6 +2,11 @@ package br.edu.infnet.appferias.model.domain;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tvisita")
 public class Visita extends Plano {
 	private String endereco;
 	private boolean ehPontoTuristico;

@@ -44,17 +44,15 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		Visita v2 = new Visita();
 		
-		v2.setTitulo("Visita a Keukenhof");
-		v2.setObjetivo("Conhecer o parque das tulipas");
+		v2.setTitulo("Visita a Bruge");
+		v2.setObjetivo("Fazer passeio de barco");
 		v2.setDataExecucao(LocalDateTime.of(2022, Month.MAY, 15, 8, 0, 0));
 		v2.setEmGrupo(false);
-		v2.setEndereco("Lisse, Netherlands");
+		v2.setEndereco("Bruge, Belgium");
 		v2.setEhPontoTuristico(true);
 		
 		v2.setPontosDeInteresse(new ArrayList<String>());
 		v2.getPontosDeInteresse().add("Tirar fotos");
-		v2.getPontosDeInteresse().add("Provar achocolatado e croissants");
-		v2.getPontosDeInteresse().add("Entrar em labirintos");
 		
 		visitaService.incluir(v2);
 		System.out.println(v2.toString());

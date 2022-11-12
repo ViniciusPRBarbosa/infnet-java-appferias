@@ -1,28 +1,27 @@
 package br.edu.infnet.appferias.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appferias.model.domain.Plano;
+import br.edu.infnet.appferias.model.repository.PlanoRepository;
 
 @Service
 public class PlanoService {
-	private static Map<Integer, Plano> mapa = new HashMap<Integer, Plano>();
-	private static Integer id = 1;
+	
+	@Autowired
+	private PlanoRepository planoRepository;
 	
 	public void incluir(Plano plano) {
-		plano.setId(id++);
-		mapa.put(plano.getId(), plano);
+		planoRepository.save(plano);
 	}
 
 	public Collection<Plano> obterLista(){
-		return mapa.values();
+		return (Collection<Plano>) planoRepository.findAll();
 	}
 	
 	public void excluir(Integer id) {
-		mapa.remove(id);
+		planoRepository.deleteById(id);
 	}
 }
