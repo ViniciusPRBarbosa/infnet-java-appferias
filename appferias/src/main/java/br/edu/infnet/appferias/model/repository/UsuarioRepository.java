@@ -7,5 +7,7 @@ import br.edu.infnet.appferias.model.domain.Usuario;
 
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer>{
-
+	
+	Usuario findByEmail(String email);
+	
 }
