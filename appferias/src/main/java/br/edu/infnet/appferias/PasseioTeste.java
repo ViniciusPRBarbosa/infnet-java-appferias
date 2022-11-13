@@ -9,9 +9,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appferias.model.domain.Passeio;
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.PasseioService;
 
-@Order(1)
+@Order(5)
 @Component
 public class PasseioTeste implements ApplicationRunner {
 
@@ -22,6 +23,10 @@ public class PasseioTeste implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.println("======== TESTANDO IMPRESSÃO DE PASSEIOS ========");
+		
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+		
 		Passeio p1 = new Passeio();
 		
 		p1.setTitulo("Primeiro dia em Bruxelas");
@@ -30,6 +35,7 @@ public class PasseioTeste implements ApplicationRunner {
 		p1.setEmGrupo(false);
 		p1.setLocalOrigem("Rodoviária da cidade");
 		p1.setLocalDestino("Praça principal");
+		p1.setUsuario(usuario);
 		p1.setPossuiPontosDeParada(true);
 		
 		p1.setPontosDeParada(new ArrayList<String>());
@@ -48,6 +54,7 @@ public class PasseioTeste implements ApplicationRunner {
 		p2.setEmGrupo(true);
 		p2.setLocalOrigem("Casa de parente");
 		p2.setLocalDestino("World Museum");
+		p2.setUsuario(usuario);
 		p2.setPossuiPontosDeParada(true);
 		
 		p2.setPontosDeParada(new ArrayList<String>());
@@ -66,6 +73,7 @@ public class PasseioTeste implements ApplicationRunner {
 		p3.setEmGrupo(true);
 		p3.setLocalOrigem("Casa de parente");
 		p3.setLocalDestino("Cavern Club");
+		p3.setUsuario(usuario);
 		p3.setPossuiPontosDeParada(false);
 		
 		passeioService.incluir(p3);

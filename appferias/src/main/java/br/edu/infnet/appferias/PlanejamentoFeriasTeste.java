@@ -19,7 +19,7 @@ import br.edu.infnet.appferias.model.domain.Turista;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.PlanejamentoFeriasService;
 
-@Order(4)
+@Order(3)
 @Component
 public class PlanejamentoFeriasTeste implements ApplicationRunner {
 

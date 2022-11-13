@@ -41,6 +41,9 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<a href="/passeio">
+			<input type="button" class="btn btn-default" value="Novo" />
+		</a>
 	</div>
 </body>
 </html>

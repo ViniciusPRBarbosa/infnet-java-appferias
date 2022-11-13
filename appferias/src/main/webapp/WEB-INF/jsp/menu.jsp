@@ -8,7 +8,7 @@
 			<a class="navbar-brand" href="#">Planejamento de férias</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
+			<li class="active"><a href="/">Home</a></li>
 			<c:if test="${not empty user}">
 				<li class="nav-item"><a class="nav-link"
 					href="/usuario/lista">Usuário</a>

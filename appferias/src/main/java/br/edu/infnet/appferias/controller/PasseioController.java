@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appferias.model.domain.Passeio;
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.PasseioService;
 
 @Controller
@@ -30,7 +32,8 @@ public class PasseioController {
 	}
 	
 	@PostMapping(value = "/passeio/incluir")
-	public String incluir(Passeio passeio) {
+	public String incluir(Passeio passeio, @SessionAttribute("user") Usuario usuario) {
+		passeio.setUsuario(usuario);
 		passeio.setPossuiPontosDeParada(passeio.getPontosDeParada().size() > 0);
 		
 		passeioService.incluir(passeio);

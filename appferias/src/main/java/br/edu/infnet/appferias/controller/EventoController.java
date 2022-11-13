@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appferias.model.domain.Evento;
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.EventoService;
 
 @Controller
@@ -30,7 +32,8 @@ public class EventoController {
 	}
 	
 	@PostMapping(value = "/evento/incluir")
-	public String incluir(Evento evento) {
+	public String incluir(Evento evento, @SessionAttribute("user") Usuario usuario) {
+		evento.setUsuario(usuario);
 		eventoService.incluir(evento);
 		
 		return "redirect:/evento/lista";

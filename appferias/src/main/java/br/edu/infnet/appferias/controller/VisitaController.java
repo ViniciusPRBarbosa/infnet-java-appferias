@@ -6,7 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.VisitaService;
 
@@ -30,7 +32,8 @@ public class VisitaController {
 	}
 	
 	@PostMapping(value = "/visita/incluir")
-	public String incluir(Visita visita) {
+	public String incluir(Visita visita, @SessionAttribute("user") Usuario usuario) {
+		visita.setUsuario(usuario);
 		visitaService.incluir(visita);
 		
 		return "redirect:/visita/lista";

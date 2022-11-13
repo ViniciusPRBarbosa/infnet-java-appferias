@@ -10,10 +10,11 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appferias.model.domain.Evento;
 import br.edu.infnet.appferias.model.domain.Passeio;
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.PlanoService;
 
-@Order(6)
+@Order(4)
 @Component
 public class PlanoTeste implements ApplicationRunner {
 
@@ -25,6 +26,9 @@ public class PlanoTeste implements ApplicationRunner {
 		
 		System.out.println("======== TESTANDO IMPRESSÃO DE PLANOS ========");
 		
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+		
 		Passeio p1 = new Passeio();
 		
 		p1.setTitulo("Primeiro dia em Londres");
@@ -34,6 +38,7 @@ public class PlanoTeste implements ApplicationRunner {
 		p1.setLocalOrigem("Apartamento de amigo");
 		p1.setLocalDestino("Piccadilly Circus");
 		p1.setPossuiPontosDeParada(true);
+		p1.setUsuario(usuario);
 		
 		p1.setPontosDeParada(new ArrayList<String>());
 		p1.getPontosDeParada().add("Big Ben");
@@ -51,7 +56,7 @@ public class PlanoTeste implements ApplicationRunner {
 		v1.setEmGrupo(false);
 		v1.setEndereco("Lisse, Netherlands");
 		v1.setEhPontoTuristico(true);
-		
+		v1.setUsuario(usuario);
 		v1.setPontosDeInteresse(new ArrayList<String>());
 		v1.getPontosDeInteresse().add("Tirar fotos");
 		v1.getPontosDeInteresse().add("Provar achocolatado e croissants");
@@ -70,6 +75,7 @@ public class PlanoTeste implements ApplicationRunner {
 		e1.setEndereco("Riverside Building, County Hall, Londres");
 		e1.setEhPago(true);
 		e1.setCustoIngresso(450);
+		e1.setUsuario(usuario);
 		
 		planoService.incluir(e1);
 		System.out.println(e1.toString());

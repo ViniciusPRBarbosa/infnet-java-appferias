@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.UsuarioService;
 
-@Order(7)
+@Order(1)
 @Component
 public class UsuarioTeste implements ApplicationRunner {
 

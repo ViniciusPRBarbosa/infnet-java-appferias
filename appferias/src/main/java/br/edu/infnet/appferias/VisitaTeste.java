@@ -8,10 +8,11 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.VisitaService;
 
-@Order(3)
+@Order(7)
 @Component
 public class VisitaTeste implements ApplicationRunner {
 
@@ -23,6 +24,9 @@ public class VisitaTeste implements ApplicationRunner {
 		
 		System.out.println("======== TESTANDO IMPRESSÃO DE VISITAS ========");
 		
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+		
 		Visita v1 = new Visita();
 		
 		v1.setTitulo("Primeira visita na Europa");
@@ -31,6 +35,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v1.setEmGrupo(true);
 		v1.setEndereco("Studio Tour Dr, Leavesden, Watford WD25 7LR, United Kingdom");
 		v1.setEhPontoTuristico(true);
+		v1.setUsuario(usuario);
 		
 		v1.setPontosDeInteresse(new ArrayList<String>());
 		v1.getPontosDeInteresse().add("Tirar fotos");
@@ -48,6 +53,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v2.setEmGrupo(false);
 		v2.setEndereco("Bruge, Belgium");
 		v2.setEhPontoTuristico(true);
+		v2.setUsuario(usuario);
 		
 		v2.setPontosDeInteresse(new ArrayList<String>());
 		v2.getPontosDeInteresse().add("Tirar fotos");
@@ -63,6 +69,7 @@ public class VisitaTeste implements ApplicationRunner {
 		v3.setEmGrupo(true);
 		v3.setEndereco("Reimenhof 41, 3530 Houthalen-Helchteren");
 		v3.setEhPontoTuristico(false);
+		v3.setUsuario(usuario);
 		
 		v3.setPontosDeInteresse(new ArrayList<String>());
 		v3.getPontosDeInteresse().add("Almoçar em família");

@@ -31,7 +31,10 @@
 					</tr>
 				</c:forEach>
 			</tbody>
-		</table>	  
+		</table>
+		<a href="/visita">
+			<input type="button" class="btn btn-default" value="Novo" />
+		</a>  
 	</div>
 </body>
 </html>

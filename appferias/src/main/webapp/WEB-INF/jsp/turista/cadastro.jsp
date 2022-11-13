@@ -26,7 +26,9 @@
 			<input type="date" class="form-control" name="dataNascimento">
 		</div>
 		<div class="form-group">
-			<label class="checkbox">Possui passaporte?<input type="checkbox" name="possuiPassaporte"></label>
+			<div class="checkbox">
+				<label><input type="checkbox" name="possuiPassaporte"> Possui passaporte?</label>
+			</div>			
 		</div>
 		<button type="submit" class="btn btn-default">Cadastrar</button>
 	</form>

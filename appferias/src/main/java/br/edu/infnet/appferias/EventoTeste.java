@@ -7,9 +7,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appferias.model.domain.Evento;
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.EventoService;
 
-@Order(2)
+@Order(6)
 @Component
 public class EventoTeste implements ApplicationRunner {
 
@@ -21,6 +22,9 @@ public class EventoTeste implements ApplicationRunner {
 		
 		System.out.println("======== TESTANDO IMPRESSÃO DE EVENTOS ========");
 		
+		Usuario usuario = new Usuario();
+		usuario.setId(1);
+		
 		Evento e1 = new Evento();
 		
 		e1.setTitulo("Primeiro dia em Londres");
@@ -30,6 +34,7 @@ public class EventoTeste implements ApplicationRunner {
 		e1.setDescricao("Troca da guarda da Rainha");
 		e1.setEndereco("Palacio de Buckingham");
 		e1.setEhPago(false);
+		e1.setUsuario(usuario);
 		
 		eventoService.incluir(e1);
 		System.out.println(e1.toString());
@@ -44,6 +49,7 @@ public class EventoTeste implements ApplicationRunner {
 		e2.setEndereco("Riverside Building, County Hall, Londres");
 		e2.setEhPago(true);
 		e2.setCustoIngresso(10);
+		e2.setUsuario(usuario);
 		
 		eventoService.incluir(e2);
 		System.out.println(e2.toString());
@@ -58,6 +64,7 @@ public class EventoTeste implements ApplicationRunner {
 		e3.setEndereco("Twickenham Stadium, Londres");
 		e3.setEhPago(true);
 		e3.setCustoIngresso(15);
+		e3.setUsuario(usuario);
 		
 		eventoService.incluir(e3);
 		System.out.println(e3.toString());
