@@ -1,47 +1,44 @@
 package br.edu.infnet.apiturista.model.domain;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tturista")
-public class Turista {	
+@Table(name = "tusuario")
+public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String email;
-	private LocalDate dataNascimento;
+	private String senha;
 	
-	@ManyToOne
-	@JoinColumn(name = "idUsuario")
-	private Usuario usuario;
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
 	
-	public Usuario getUsuario() {
-		return usuario;
+	public Endereco getEndereco() {
+		return endereco;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public String getSenha() {
+		return senha;
 	}
 
-	private boolean possuiPassaporte;
-	
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -66,17 +63,9 @@ public class Turista {
 		this.email = email;
 	}
 
-	public boolean isPossuiPassaporte() {
-		return possuiPassaporte;
-	}
-
-	public void setPossuiPassaporte(boolean possuiPassaporte) {
-		this.possuiPassaporte = possuiPassaporte;
-	}
-
 	@Override
 	public String toString() {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		
 		StringBuilder impressaoObjeto = new StringBuilder();
 		
 		impressaoObjeto.append(String.format("Id: %s", id));
@@ -85,11 +74,7 @@ public class Turista {
 		impressaoObjeto.append("\n");
 		impressaoObjeto.append(String.format("E-mail: %s", email));
 		impressaoObjeto.append("\n");
-		impressaoObjeto.append(String.format("Data de nascimento: %s", dataNascimento.format(formatter)));
-		impressaoObjeto.append("\n");
-		impressaoObjeto.append(String.format("Possui passaporte? %s", possuiPassaporte ? "Sim": "Não"));
-		impressaoObjeto.append("\n");
-		
+			
 		return impressaoObjeto.toString();
 	}
 }
