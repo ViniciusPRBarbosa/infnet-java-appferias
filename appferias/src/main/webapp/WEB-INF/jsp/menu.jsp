@@ -9,30 +9,36 @@
 		</div>
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="/usuario/lista">Usuário</a>
-			</li>
-			<li class="nav-item"><a class="nav-link"
-				href="/planejamentoferias/lista">Planejamento de férias</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="/turista/lista">Turista</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="/plano/lista">Plano</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="/passeio/lista">Passeio</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="/evento/lista">Evento</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="/visita/lista">Visita</a>
-			</li>
+			<c:if test="${not empty user}">
+				<li class="nav-item"><a class="nav-link"
+					href="/usuario/lista">Usuário</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="/planejamentoferias/lista">Planejamento de férias</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/turista/lista">Turista</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/plano/lista">Plano</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/passeio/lista">Passeio</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/evento/lista">Evento</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="/visita/lista">Visita</a>
+				</li>
+			</c:if>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="/usuario"><span class="glyphicon glyphicon-user"></span>
-					Sign Up</a></li>
-			<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>
-					Login</a></li>
-			<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>
+			<c:if test="${empty user}">
+				<li><a href="/usuario"><span class="glyphicon glyphicon-user"></span>
+						Sign Up</a></li>
+				<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>
+						Login</a></li>
+			</c:if>
+			<c:if test="${not empty user}">
+				<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>
 					Logout ${user.nome}</a></li>
+			</c:if>
 		</ul>
 	</div>
 </nav>
