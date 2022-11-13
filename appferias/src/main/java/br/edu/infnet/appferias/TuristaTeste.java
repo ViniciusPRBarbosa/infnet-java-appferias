@@ -1,5 +1,7 @@
 package br.edu.infnet.appferias;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -30,7 +32,7 @@ public class TuristaTeste implements ApplicationRunner {
 		t1.setNome("Vinícius Pereira Reis Barbosa");
 		t1.setEmail("vinicius.barbosa@email.com");
 		t1.setPossuiPassaporte(true);
-		t1.setDataNascimento("1990-04-30");
+		t1.setDataNascimento(LocalDate.now());
 		t1.setUsuario(usuario);
 		
 		turistaService.incluir(t1);
@@ -41,7 +43,7 @@ public class TuristaTeste implements ApplicationRunner {
 		t2.setNome("Bernard Pereira dos Reis Barbosa");
 		t2.setEmail("bernard.barbosa@email.com");
 		t2.setPossuiPassaporte(false);
-		t2.setDataNascimento("1996-12-26");
+		t2.setDataNascimento(LocalDate.now());
 		t2.setUsuario(usuario);
 		
 		turistaService.incluir(t2);
@@ -52,7 +54,7 @@ public class TuristaTeste implements ApplicationRunner {
 		t3.setNome("Marina Garcia de Vechi");
 		t3.setEmail("marina.vechi@email.com");
 		t3.setPossuiPassaporte(true);
-		t3.setDataNascimento("1991-03-01");
+		t3.setDataNascimento(LocalDate.now());
 		t3.setUsuario(usuario);
 		
 		turistaService.incluir(t3);

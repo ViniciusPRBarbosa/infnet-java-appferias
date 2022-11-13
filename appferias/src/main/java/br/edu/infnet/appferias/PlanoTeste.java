@@ -1,5 +1,6 @@
 package br.edu.infnet.appferias;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class PlanoTeste implements ApplicationRunner {
 		
 		p1.setTitulo("Primeiro dia em Londres");
 		p1.setObjetivo("Conhecer a cidade");
-		p1.setDataExecucao("2022-03-03");
+		p1.setDataExecucao(LocalDate.now());
 		p1.setEmGrupo(false);
 		p1.setLocalOrigem("Apartamento de amigo");
 		p1.setLocalDestino("Piccadilly Circus");
@@ -52,7 +53,7 @@ public class PlanoTeste implements ApplicationRunner {
 		
 		v1.setTitulo("Visita a Keukenhof");
 		v1.setObjetivo("Conhecer o parque das tulipas");
-		v1.setDataExecucao("2022-03-15");
+		v1.setDataExecucao(LocalDate.now());
 		v1.setEmGrupo(false);
 		v1.setEndereco("Lisse, Netherlands");
 		v1.setEhPontoTuristico(true);
@@ -69,7 +70,7 @@ public class PlanoTeste implements ApplicationRunner {
 		
 		e1.setTitulo("Pontos turísticos de Londres - London Eye");
 		e1.setObjetivo("Tirar fotos");
-		e1.setDataExecucao("2022-03-04");
+		e1.setDataExecucao(LocalDate.now());
 		e1.setEmGrupo(true);
 		e1.setDescricao("Volta do London Eye");
 		e1.setEndereco("Riverside Building, County Hall, Londres");

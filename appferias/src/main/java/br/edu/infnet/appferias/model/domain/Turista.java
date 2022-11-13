@@ -1,6 +1,6 @@
 package br.edu.infnet.appferias.model.domain;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Entity;
@@ -19,7 +19,16 @@ public class Turista {
 	private Integer id;
 	private String nome;
 	private String email;
-	private LocalDateTime dataNascimento;
+	private LocalDate dataNascimento;
+	
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
 	private boolean possuiPassaporte;
 	
 	@ManyToOne
@@ -56,15 +65,6 @@ public class Turista {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public LocalDateTime getDataNascimento() {		
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(String dataNascimento) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		this.dataNascimento = LocalDateTime.parse(String.format("%s 00:00:00", dataNascimento), formatter);
 	}
 
 	public boolean isPossuiPassaporte() {

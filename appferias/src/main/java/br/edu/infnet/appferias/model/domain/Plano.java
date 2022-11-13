@@ -1,6 +1,6 @@
 package br.edu.infnet.appferias.model.domain;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -24,7 +24,7 @@ public abstract class Plano {
 	private Integer id;
 	private String titulo;
 	private String objetivo;
-	private LocalDateTime dataExecucao;
+	private LocalDate dataExecucao;
 	private Boolean emGrupo = false;
 	
 	@ManyToMany(mappedBy = "planos")
@@ -66,15 +66,6 @@ public abstract class Plano {
 		this.objetivo = objetivo;
 	}
 
-	public LocalDateTime getDataExecucao() {
-		return dataExecucao;
-	}
-
-	public void setDataExecucao(String dataExecucao) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		this.dataExecucao = LocalDateTime.parse(String.format("%s 00:00:00", dataExecucao), formatter);
-	}
-
 	public Boolean getEmGrupo() {
 		return emGrupo;
 	}
@@ -83,6 +74,14 @@ public abstract class Plano {
 		this.emGrupo = emGrupo;
 	}
 	
+	public LocalDate getDataExecucao() {
+		return dataExecucao;
+	}
+
+	public void setDataExecucao(LocalDate dataExecucao) {
+		this.dataExecucao = dataExecucao;
+	}
+
 	@Override
 	public String toString() {
 		

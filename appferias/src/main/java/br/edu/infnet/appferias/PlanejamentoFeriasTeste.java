@@ -1,5 +1,6 @@
 package br.edu.infnet.appferias;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		pa1.setTitulo("Primeiro dia em Londres");
 		pa1.setObjetivo("Conhecer a cidade");
-		pa1.setDataExecucao("2022-03-03");
+		pa1.setDataExecucao(LocalDate.now());
 		pa1.setEmGrupo(false);
 		pa1.setLocalOrigem("Apartamento de amigo");
 		pa1.setLocalDestino("Piccadilly Circus");
@@ -60,7 +61,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		v1.setTitulo("Visita a Keukenhof");
 		v1.setObjetivo("Conhecer o parque das tulipas");
-		v1.setDataExecucao("2022-03-15");
+		v1.setDataExecucao(LocalDate.now());
 		v1.setEmGrupo(false);
 		v1.setEndereco("Lisse, Netherlands");
 		v1.setEhPontoTuristico(true);
@@ -74,7 +75,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		e1.setTitulo("Pontos turísticos de Londres - London Eye");
 		e1.setObjetivo("Tirar fotos");
-		e1.setDataExecucao("2022-03-04");
+		e1.setDataExecucao(LocalDate.now());
 		e1.setEmGrupo(true);
 		e1.setDescricao("Volta do London Eye");
 		e1.setEndereco("Riverside Building, County Hall, Londres");
@@ -107,7 +108,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t1.setNome("Vinícius Pereira Reis Barbosa");
 		t1.setEmail("vinicius.barbosa@emailteste.com");
 		t1.setPossuiPassaporte(true);
-		t1.setDataNascimento("1990-04-30");
+		t1.setDataNascimento(LocalDate.now());
 		
 		turistaService.incluir(t1);
 
@@ -126,7 +127,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t2.setNome("Bernard Pereira dos Reis Barbosa");
 		t2.setEmail("bernard.barbosa@emailteste.com");
 		t2.setPossuiPassaporte(false);
-		t2.setDataNascimento("1996-12-23");
+		t2.setDataNascimento(LocalDate.now());
 		
 		turistaService.incluir(t2);
 		
@@ -149,7 +150,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t3.setNome("Marina Garcia de Vechi");
 		t3.setEmail("marina.vechi@emailteste.com");
 		t3.setPossuiPassaporte(true);
-		t3.setDataNascimento("1991-03-01");
+		t3.setDataNascimento(LocalDate.now());
 		
 		turistaService.incluir(t3);
 		
