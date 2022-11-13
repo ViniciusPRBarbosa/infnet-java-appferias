@@ -3,34 +3,33 @@ package br.edu.infnet.appferias.model.service;
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import br.edu.infnet.appferias.clients.IUsuarioClient;
 import br.edu.infnet.appferias.model.domain.Usuario;
-import br.edu.infnet.appferias.model.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
 	
 	@Autowired
-	private UsuarioRepository usuarioRepository;
+	private IUsuarioClient usuarioClient;
 	
 	public void incluir(Usuario turista) {
-		usuarioRepository.save(turista);
+		usuarioClient.incluir(turista);
 	}
 
 	public Collection<Usuario> obterLista(){
-		return (Collection<Usuario>) usuarioRepository.findAll();
+		return (Collection<Usuario>) usuarioClient.obterLista();
 	}
 	
 	public void excluir(Integer id) {
-		usuarioRepository.deleteById(id);
+		usuarioClient.excluir(id);
 	}
 	
 	public Usuario validar(String email, String senha) {
-		Usuario usuario = usuarioRepository.findByEmail(email);
+		Usuario usuario = usuarioClient.validar(email, senha);
 		
-		if(usuario != null && senha.equals(usuario.getSenha())) {
-			
+		if(usuario != null)
 			return usuario;
-		}
 		
 		return null;
 	}

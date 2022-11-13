@@ -17,10 +17,12 @@ import br.edu.infnet.appferias.model.domain.Passeio;
 import br.edu.infnet.appferias.model.domain.PlanejamentoFerias;
 import br.edu.infnet.appferias.model.domain.Plano;
 import br.edu.infnet.appferias.model.domain.Turista;
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.PlanejamentoFeriasService;
 import br.edu.infnet.appferias.model.service.PlanoService;
 import br.edu.infnet.appferias.model.service.TuristaService;
+import br.edu.infnet.appferias.model.service.UsuarioService;
 
 @Order(7)
 @Component
@@ -33,6 +35,9 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 	private TuristaService turistaService;
 	
 	@Autowired
+	private UsuarioService usuarioService;
+	
+	@Autowired
 	private PlanoService planoService;
 	
 	@Override
@@ -40,6 +45,8 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 
 		System.out.println("======== TESTANDO IMPRESSÃO DE PLANEJAMENTOS DE FÉRIAS ========");
 
+		Usuario usuario = usuarioService.validar("usuario1@email.com", "123456");
+		
 		PlanejamentoFerias p1 = new PlanejamentoFerias();
 		
 		Passeio pa1 = new Passeio();
@@ -103,15 +110,8 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		List<Plano> planosDoTerceiroPlanejamento = new ArrayList<Plano>();
 		
-		Turista t1 = new Turista();
+		Turista t1 = ((List<Turista>) turistaService.obterLista()).get(0);
 		
-		t1.setNome("Vinícius Pereira Reis Barbosa");
-		t1.setEmail("vinicius.barbosa@emailteste.com");
-		t1.setPossuiPassaporte(true);
-		t1.setDataNascimento(LocalDate.now());
-		
-		turistaService.incluir(t1);
-
 		p1.setTitulo("Primeira viagem para a Europa");
 		p1.setDescricao("Viagem para a Europa, com visita a parentes e a locais turisticos.");
 		p1.setDataInicio(LocalDateTime.of(2022, Month.MAY, 1, 8, 0, 0));
@@ -122,15 +122,8 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		planejamentoFeriasService.incluir(p1);
 		System.out.println(p1.toString());
 		
-		Turista t2 = new Turista();
+		Turista t2 = ((List<Turista>) turistaService.obterLista()).get(1);
 
-		t2.setNome("Bernard Pereira dos Reis Barbosa");
-		t2.setEmail("bernard.barbosa@emailteste.com");
-		t2.setPossuiPassaporte(false);
-		t2.setDataNascimento(LocalDate.now());
-		
-		turistaService.incluir(t2);
-		
 		PlanejamentoFerias p2 = new PlanejamentoFerias(t2);
 		
 		p2.setTitulo("Primeira viagem para a Asia");
@@ -145,15 +138,8 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		PlanejamentoFerias p3 = new PlanejamentoFerias();
 
-		Turista t3 = new Turista();
+		Turista t3 = ((List<Turista>) turistaService.obterLista()).get(2);
 
-		t3.setNome("Marina Garcia de Vechi");
-		t3.setEmail("marina.vechi@emailteste.com");
-		t3.setPossuiPassaporte(true);
-		t3.setDataNascimento(LocalDate.now());
-		
-		turistaService.incluir(t3);
-		
 		p3.setDescricao("Viagem para cidade natal, para visita a parentes e a locais de infância.");
 		p3.setDataFim(LocalDateTime.of(2022, Month.DECEMBER, 27, 23, 59, 0));
 		p3.setTurista(t3);
