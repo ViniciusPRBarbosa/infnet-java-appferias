@@ -19,9 +19,9 @@ public class PasseioController {
 	private PasseioService passeioService; 
 	
 	@GetMapping(value = "/passeio/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
-		model.addAttribute("listagem", passeioService.obterLista());
+		model.addAttribute("listagem", passeioService.obterLista(usuario));
 		
 		return "passeio/lista";
 	}

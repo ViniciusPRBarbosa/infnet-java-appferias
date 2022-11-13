@@ -19,9 +19,9 @@ public class TuristaController {
 	private TuristaService turistaService;
 	
 	@GetMapping(value = "/turista/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
-		model.addAttribute("listagem", turistaService.obterLista());
+		model.addAttribute("listagem", turistaService.obterLista(usuario));
 		
 		return "turista/lista";
 	}

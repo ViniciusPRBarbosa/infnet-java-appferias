@@ -19,9 +19,9 @@ public class EventoController {
 	private EventoService eventoService;
 	
 	@GetMapping(value = "/evento/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
-		model.addAttribute("listagem", eventoService.obterLista());
+		model.addAttribute("listagem", eventoService.obterLista(usuario));
 		
 		return "evento/lista";
 	}
