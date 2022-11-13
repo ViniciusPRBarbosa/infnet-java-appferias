@@ -2,6 +2,7 @@ package br.edu.infnet.appferias.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -24,6 +26,9 @@ public abstract class Plano {
 	private String objetivo;
 	private LocalDateTime dataExecucao;
 	private Boolean emGrupo = false;
+	
+	@ManyToMany(mappedBy = "planos")
+	private List<PlanejamentoFerias> planejamentosFerias;
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
@@ -113,5 +118,13 @@ public abstract class Plano {
 			impressaoObjeto.append(String.format("Em grupo? %s", emGrupo ? "Sim": "Não"));
 		
 		return impressaoObjeto.toString();
+	}
+
+	public List<PlanejamentoFerias> getPlanejamentosFerias() {
+		return planejamentosFerias;
+	}
+
+	public void setPlanejamentosFerias(List<PlanejamentoFerias> planejamentosFerias) {
+		this.planejamentosFerias = planejamentosFerias;
 	}
 }

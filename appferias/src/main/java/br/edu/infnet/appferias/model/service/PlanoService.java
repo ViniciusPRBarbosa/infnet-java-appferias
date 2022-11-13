@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appferias.model.domain.Plano;
+import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.repository.PlanoRepository;
 
 @Service
@@ -19,6 +20,10 @@ public class PlanoService {
 
 	public Collection<Plano> obterLista(){
 		return (Collection<Plano>) planoRepository.findAll();
+	}
+	
+	public Collection<Plano> obterLista(Usuario usuario){
+		return (Collection<Plano>) planoRepository.obterLista(usuario.getId());
 	}
 	
 	public void excluir(Integer id) {

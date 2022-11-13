@@ -12,7 +12,7 @@ import br.edu.infnet.appferias.model.domain.Passeio;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.PasseioService;
 
-@Order(5)
+@Order(3)
 @Component
 public class PasseioTeste implements ApplicationRunner {
 

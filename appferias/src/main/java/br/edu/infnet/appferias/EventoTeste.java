@@ -10,7 +10,7 @@ import br.edu.infnet.appferias.model.domain.Evento;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.EventoService;
 
-@Order(6)
+@Order(4)
 @Component
 public class EventoTeste implements ApplicationRunner {
 

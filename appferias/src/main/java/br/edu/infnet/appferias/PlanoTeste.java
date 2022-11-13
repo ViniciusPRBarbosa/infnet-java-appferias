@@ -14,7 +14,7 @@ import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.PlanoService;
 
-@Order(4)
+@Order(6)
 @Component
 public class PlanoTeste implements ApplicationRunner {
 

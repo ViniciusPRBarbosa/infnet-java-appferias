@@ -18,13 +18,21 @@ import br.edu.infnet.appferias.model.domain.Plano;
 import br.edu.infnet.appferias.model.domain.Turista;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.PlanejamentoFeriasService;
+import br.edu.infnet.appferias.model.service.PlanoService;
+import br.edu.infnet.appferias.model.service.TuristaService;
 
-@Order(3)
+@Order(7)
 @Component
 public class PlanejamentoFeriasTeste implements ApplicationRunner {
 
 	@Autowired
 	private PlanejamentoFeriasService planejamentoFeriasService;
+	
+	@Autowired
+	private TuristaService turistaService;
+	
+	@Autowired
+	private PlanoService planoService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -79,10 +87,18 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		planosDoPrimeiroPlanejamento.add(v1);
 		planosDoPrimeiroPlanejamento.add(pa1);
 		
+		for (Plano plano : planosDoPrimeiroPlanejamento) {
+			planoService.incluir(plano);
+		}
+		
 		List<Plano> planosDoSegundoPlanejamento = new ArrayList<Plano>();
 		
 		planosDoSegundoPlanejamento.add(pa1);
 		planosDoSegundoPlanejamento.add(e1);
+		
+		for (Plano plano : planosDoSegundoPlanejamento) {
+			planoService.incluir(plano);
+		}
 		
 		List<Plano> planosDoTerceiroPlanejamento = new ArrayList<Plano>();
 		
@@ -92,6 +108,8 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t1.setEmail("vinicius.barbosa@emailteste.com");
 		t1.setPossuiPassaporte(true);
 		t1.setDataNascimento("1990-04-30");
+		
+		turistaService.incluir(t1);
 
 		p1.setTitulo("Primeira viagem para a Europa");
 		p1.setDescricao("Viagem para a Europa, com visita a parentes e a locais turisticos.");
@@ -109,6 +127,8 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t2.setEmail("bernard.barbosa@emailteste.com");
 		t2.setPossuiPassaporte(false);
 		t2.setDataNascimento("1996-12-23");
+		
+		turistaService.incluir(t2);
 		
 		PlanejamentoFerias p2 = new PlanejamentoFerias(t2);
 		
@@ -130,6 +150,8 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		t3.setEmail("marina.vechi@emailteste.com");
 		t3.setPossuiPassaporte(true);
 		t3.setDataNascimento("1991-03-01");
+		
+		turistaService.incluir(t3);
 		
 		p3.setDescricao("Viagem para cidade natal, para visita a parentes e a locais de infância.");
 		p3.setDataFim(LocalDateTime.of(2022, Month.DECEMBER, 27, 23, 59, 0));

@@ -26,6 +26,30 @@ public class Usuario {
 	@JoinColumn(name = "idUsuario")
 	private List<Turista> turistas;
 	
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<PlanejamentoFerias> planejamentoFerias;
+	
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Plano> plano;
+	
+	public List<PlanejamentoFerias> getPlanejamentoFerias() {
+		return planejamentoFerias;
+	}
+
+	public void setPlanejamentoFerias(List<PlanejamentoFerias> planejamentoFerias) {
+		this.planejamentoFerias = planejamentoFerias;
+	}
+
+	public List<Plano> getPlano() {
+		return plano;
+	}
+
+	public void setPlano(List<Plano> plano) {
+		this.plano = plano;
+	}
+
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idEndereco")
 	private Endereco endereco;

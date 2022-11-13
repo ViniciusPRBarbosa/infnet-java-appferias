@@ -4,15 +4,48 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tplanejamentoFerias")
 public class PlanejamentoFerias {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	private String titulo;
 	private LocalDateTime dataInicio;
 	private LocalDateTime dataFim;
 	private String descricao;
+	
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idTurista")
 	private Turista turista;
+	
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Plano> planos;
 	
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public Integer getId() {
 		return id;
 	}

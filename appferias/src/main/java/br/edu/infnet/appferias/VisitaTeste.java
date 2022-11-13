@@ -12,7 +12,7 @@ import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.VisitaService;
 
-@Order(7)
+@Order(5)
 @Component
 public class VisitaTeste implements ApplicationRunner {
 
