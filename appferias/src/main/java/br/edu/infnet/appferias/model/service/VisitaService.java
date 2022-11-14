@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import br.edu.infnet.appferias.clients.IVisitaClient;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
-import br.edu.infnet.appferias.model.repository.VisitaRepository;
 
 @Service
 public class VisitaService {

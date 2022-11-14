@@ -1,4 +1,4 @@
-package br.edu.infnet.appferias.model.domain;
+package br.edu.infnet.apiplanejamentoferias.model.domain;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -35,6 +35,7 @@ public class Turista {
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
+	@JsonBackReference(value="turista-usuario")
 	private Usuario usuario;
 	
 	public Usuario getUsuario() {

@@ -1,4 +1,4 @@
-package br.edu.infnet.appferias.model.domain;
+package br.edu.infnet.apiplanejamentoferias.model.domain;
 
 import java.util.List;
 
@@ -26,14 +26,17 @@ public class Usuario {
 	
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
+	@JsonManagedReference(value="turista-usuario")
 	private List<Turista> turistas;
 	
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
+	@JsonManagedReference(value="usuario-planejamento")
 	private List<PlanejamentoFerias> planejamentoFerias;
 	
 	@OneToMany
 	@JoinColumn(name = "idUsuario")
+	@JsonManagedReference(value="usuario-plano")
 	private List<Plano> plano;
 	
 	public List<PlanejamentoFerias> getPlanejamentoFerias() {

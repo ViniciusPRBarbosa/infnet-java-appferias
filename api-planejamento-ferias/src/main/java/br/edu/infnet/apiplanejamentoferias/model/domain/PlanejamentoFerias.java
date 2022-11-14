@@ -1,4 +1,4 @@
-package br.edu.infnet.appferias.model.domain;
+package br.edu.infnet.apiplanejamentoferias.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -35,10 +35,12 @@ public class PlanejamentoFerias {
 	private Turista turista;
 	
 	@ManyToMany(cascade = CascadeType.DETACH)
+	@JsonIgnoreProperties(value="planejamentosFerias")
 	private List<Plano> planos;
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
+	@JsonBackReference(value="usuario-planejamento")
 	private Usuario usuario;
 	
 	public Usuario getUsuario() {
