@@ -1,6 +1,7 @@
 package br.edu.infnet.appferias;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appferias.model.domain.Turista;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.TuristaService;
+import br.edu.infnet.appferias.model.service.UsuarioService;
 
 @Order(2)
 @Component
@@ -19,13 +21,15 @@ public class TuristaTeste implements ApplicationRunner {
 	@Autowired
 	private TuristaService turistaService;
 	
+	@Autowired
+	private UsuarioService usuarioService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.println("======== TESTANDO IMPRESSÃO DE TURISTAS ========");
 
-		Usuario usuario = new Usuario();
-		usuario.setId(1);
+		Usuario usuario = ((List<Usuario>) usuarioService.obterLista()).get(0);
 		
 		Turista t1 = new Turista();
 

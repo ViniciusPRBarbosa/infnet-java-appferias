@@ -17,12 +17,10 @@ import br.edu.infnet.appferias.model.domain.Passeio;
 import br.edu.infnet.appferias.model.domain.PlanejamentoFerias;
 import br.edu.infnet.appferias.model.domain.Plano;
 import br.edu.infnet.appferias.model.domain.Turista;
-import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.service.PlanejamentoFeriasService;
 import br.edu.infnet.appferias.model.service.PlanoService;
 import br.edu.infnet.appferias.model.service.TuristaService;
-import br.edu.infnet.appferias.model.service.UsuarioService;
 
 @Order(7)
 @Component
@@ -35,9 +33,6 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 	private TuristaService turistaService;
 	
 	@Autowired
-	private UsuarioService usuarioService;
-	
-	@Autowired
 	private PlanoService planoService;
 	
 	@Override
@@ -45,8 +40,6 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 
 		System.out.println("======== TESTANDO IMPRESSÃO DE PLANEJAMENTOS DE FÉRIAS ========");
 
-		Usuario usuario = usuarioService.validar("usuario1@email.com", "123456");
-		
 		PlanejamentoFerias p1 = new PlanejamentoFerias();
 		
 		Passeio pa1 = new Passeio();
@@ -96,7 +89,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		planosDoPrimeiroPlanejamento.add(pa1);
 		
 		for (Plano plano : planosDoPrimeiroPlanejamento) {
-			planoService.incluir(plano);
+			//planoService.incluir(plano);
 		}
 		
 		List<Plano> planosDoSegundoPlanejamento = new ArrayList<Plano>();
@@ -105,7 +98,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		planosDoSegundoPlanejamento.add(e1);
 		
 		for (Plano plano : planosDoSegundoPlanejamento) {
-			planoService.incluir(plano);
+			//planoService.incluir(plano);
 		}
 		
 		List<Plano> planosDoTerceiroPlanejamento = new ArrayList<Plano>();
@@ -119,7 +112,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		p1.setTurista(t1);		
 		p1.setPlanos(planosDoPrimeiroPlanejamento);
 		
-		planejamentoFeriasService.incluir(p1);
+		//planejamentoFeriasService.incluir(p1);
 		System.out.println(p1.toString());
 		
 		Turista t2 = ((List<Turista>) turistaService.obterLista()).get(1);
@@ -133,7 +126,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		p2.setPlanos(planosDoSegundoPlanejamento);
 		
-		planejamentoFeriasService.incluir(p2);
+		//planejamentoFeriasService.incluir(p2);
 		System.out.println(p2.toString());
 		
 		PlanejamentoFerias p3 = new PlanejamentoFerias();
@@ -146,7 +139,7 @@ public class PlanejamentoFeriasTeste implements ApplicationRunner {
 		
 		p3.setPlanos(planosDoTerceiroPlanejamento);
 		
-		planejamentoFeriasService.incluir(p3);
+		//planejamentoFeriasService.incluir(p3);
 		System.out.println(p3.toString());
 		
 		System.out.println("\n");

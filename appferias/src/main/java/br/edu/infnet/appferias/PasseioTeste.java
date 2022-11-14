@@ -2,6 +2,7 @@ package br.edu.infnet.appferias;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appferias.model.domain.Passeio;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.PasseioService;
+import br.edu.infnet.appferias.model.service.UsuarioService;
 
 @Order(3)
 @Component
@@ -20,13 +22,15 @@ public class PasseioTeste implements ApplicationRunner {
 	@Autowired
 	private PasseioService passeioService;
 	
+	@Autowired
+	private UsuarioService usuarioService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
 		System.out.println("======== TESTANDO IMPRESSÃO DE PASSEIOS ========");
 		
-		Usuario usuario = new Usuario();
-		usuario.setId(1);
+		Usuario usuario = ((List<Usuario>) usuarioService.obterLista()).get(0);
 		
 		Passeio p1 = new Passeio();
 		

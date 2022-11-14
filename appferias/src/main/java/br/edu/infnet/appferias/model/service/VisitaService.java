@@ -4,6 +4,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.appferias.clients.IVisitaClient;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.domain.Visita;
 import br.edu.infnet.appferias.model.repository.VisitaRepository;
@@ -12,21 +13,21 @@ import br.edu.infnet.appferias.model.repository.VisitaRepository;
 public class VisitaService {
 	
 	@Autowired
-	private VisitaRepository visitaRepository;
+	private IVisitaClient visitaClient;
 	
 	public void incluir(Visita visita) {
-		visitaRepository.save(visita);
+		visitaClient.incluir(visita);
 	}
 
 	public Collection<Visita> obterLista(){
-		return (Collection<Visita>) visitaRepository.findAll();
+		return (Collection<Visita>) visitaClient.obterLista();
 	}
 	
 	public Collection<Visita> obterLista(Usuario usuario){
-		return (Collection<Visita>) visitaRepository.obterLista(usuario.getId());
+		return (Collection<Visita>) visitaClient.obterLista(usuario.getId());
 	}
 	
 	public void excluir(Integer id) {
-		visitaRepository.deleteById(id);
+		visitaClient.excluir(id);
 	}
 }
