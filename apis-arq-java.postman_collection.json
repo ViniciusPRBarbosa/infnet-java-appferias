@@ -1,0 +1,703 @@
+{
+	"info": {
+		"_postman_id": "30a2b4bf-614a-45b2-9a3b-3ec4ba846095",
+		"name": "apis-arq-java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-usuario",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/usuario/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nome\": \"Usuario teste\",\r\n        \"email\": \"email@email.com\",\r\n        \"senha\": \"123456\",\r\n        \"endereco\": {\r\n            \"cep\": \"Cep teste\",\r\n            \"logradouro\": \"Logradouro teste\",\r\n            \"complemento\": \"Complemento teste\",\r\n            \"bairro\": \"Bairo teste\",\r\n            \"localidade\": \"Localidade teste\",\r\n            \"uf\": \"UF teste\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/usuario/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/usuario/5/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"5",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/usuario/validar?email=email@email.com&senha=123456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"usuario",
+								"validar"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "email@email.com"
+								},
+								{
+									"key": "senha",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-turista",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/turista/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"turista",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar por usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/turista/usuario/1/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"turista",
+								"usuario",
+								"1",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 1,\r\n        \"nome\": \"Artur Pereira Reis Barbosa\",\r\n        \"email\": \"artur.barbosa@email.com\",\r\n        \"dataNascimento\": \"1991-11-13\",\r\n        \"usuario\": {\r\n            \"id\": 1\r\n        },\r\n        \"possuiPassaporte\": false\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/api/turista/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"turista",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/api/turista/2/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"api",
+								"turista",
+								"2",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-plano",
+			"item": [
+				{
+					"name": "passeio",
+					"item": [
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/passeio/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"passeio",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar por usuário",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/passeio/usuario/1/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"passeio",
+										"usuario",
+										"1",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "incluir",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"titulo\": \"Quinto dia em Londres\",\r\n        \"objetivo\": \"Conhecer a cidade\",\r\n        \"dataExecucao\": \"2022-11-13\",\r\n        \"emGrupo\": false,\r\n        \"usuario\": null,\r\n        \"localOrigem\": \"Apartamento de amigo\",\r\n        \"localDestino\": \"Piccadilly Circus\",\r\n        \"possuiPontosDeParada\": true,\r\n        \"pontosDeParada\": [\r\n            \"Big Ben\",\r\n            \"Palacio de Buckingham\",\r\n            \"London Eye\"\r\n        ]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/passeio/incluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"passeio",
+										"incluir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "excluir",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/passeio/16/excluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"passeio",
+										"16",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "evento",
+					"item": [
+						{
+							"name": "excluir",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/evento/7/excluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"evento",
+										"7",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/evento/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"evento",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar por usuário",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/evento/usuario/1/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"evento",
+										"usuario",
+										"1",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "incluir",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"titulo\": \"Segundo show na Europa\",\r\n        \"objetivo\": \"Ir a um show da banda preferida\",\r\n        \"dataExecucao\": \"2023-11-13\",\r\n        \"emGrupo\": true,\r\n        \"usuario\": {\r\n            \"id\": 1,\r\n            \"nome\": \"Usuário 1\",\r\n            \"email\": \"usuario1@email.com\",\r\n            \"senha\": \"123456\",\r\n            \"endereco\": null\r\n        },\r\n        \"descricao\": \"Show do Trivium\",\r\n        \"ehPago\": true,\r\n        \"custoIngresso\": 15.0,\r\n        \"endereco\": \"Twickenham Stadium, Londres\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/evento/incluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"evento",
+										"incluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "visita",
+					"item": [
+						{
+							"name": "listar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/visita/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"visita",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "incluir",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 9,\r\n        \"titulo\": \"Visitar a avó\",\r\n        \"objetivo\": \"Conhecer a avó\",\r\n        \"dataExecucao\": \"2022-11-13\",\r\n        \"emGrupo\": true,\r\n        \"usuario\": {\r\n            \"id\": 1,\r\n            \"nome\": \"Usuário 1\",\r\n            \"email\": \"usuario1@email.com\",\r\n            \"senha\": \"123456\",\r\n            \"endereco\": null\r\n        },\r\n        \"endereco\": \"Reimenhof 41, 3530 Houthalen-Helchteren\",\r\n        \"ehPontoTuristico\": false,\r\n        \"pontosDeInteresse\": [\r\n            \"Almoçar em família\"\r\n        ]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/visita/incluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"visita",
+										"incluir"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "listar por usuário",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/visita/usuario/1/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"visita",
+										"usuario",
+										"1",
+										"listar"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "excluir",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/visita/8/excluir",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"visita",
+										"8",
+										"excluir"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/plano/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"plano",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/plano/1/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"plano",
+								"1",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar por usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/plano/usuario/1/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"plano",
+								"usuario",
+								"1",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api-planejamentoferias",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/planejamento/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"planejamento",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"titulo\": \"planejamento de férias teste dois\",\r\n        \"dataInicio\": \"2022-11-14T02:04:26\",\r\n        \"dataFim\": \"2022-12-27T23:59:00\",\r\n        \"descricao\": \"Viagem para cidade natal, para visita a parentes e a locais de infância.\",\r\n        \"turista\": {\r\n            \"id\": 3,\r\n            \"nome\": \"Marina Garcia de Vechi\",\r\n            \"email\": \"marina.vechi@email.com\",\r\n            \"dataNascimento\": \"2022-11-14\",\r\n            \"possuiPassaporte\": true\r\n        },\r\n        \"planos\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/planejamento/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"planejamento",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/planejamento/4/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"planejamento",
+								"4",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar por usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/planejamento/usuario/1/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"planejamento",
+								"usuario",
+								"1",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
