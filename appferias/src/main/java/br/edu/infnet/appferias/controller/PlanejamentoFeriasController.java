@@ -1,5 +1,8 @@
 package br.edu.infnet.appferias.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.appferias.model.domain.PlanejamentoFerias;
+import br.edu.infnet.appferias.model.domain.Plano;
 import br.edu.infnet.appferias.model.domain.Usuario;
 import br.edu.infnet.appferias.model.service.PlanejamentoFeriasService;
 import br.edu.infnet.appferias.model.service.PlanoService;
@@ -25,7 +29,7 @@ public class PlanejamentoFeriasController {
 	
 	@Autowired
 	private PlanoService planoService;
-	
+		
 	@GetMapping(value = "/planejamentoferias/lista")
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
@@ -46,10 +50,25 @@ public class PlanejamentoFeriasController {
 	@PostMapping(value = "/planejamentoferias/incluir")
 	public String incluir(PlanejamentoFerias planejamentoFerias, @SessionAttribute("user") Usuario usuario) {
 		
-		System.out.println("Turista: " + planejamentoFerias.getTurista());
-		System.out.println("Planos: " + planejamentoFerias.getPlanos());
+		if(planejamentoFerias.getPlanos() == null) {
+			List<Plano> listaVaziaDePlanos = new ArrayList<Plano>();
+			planejamentoFerias.setPlanos(listaVaziaDePlanos);
+		}
+		else {
+			for (Plano plano : planejamentoFerias.getPlanos()) {
+				plano.setPlanejamentosFerias(null);
+				plano.getUsuario().setPlanejamentoFerias(null);
+				plano.getUsuario().setTuristas(null);
+				plano.getUsuario().setPlano(null);
+			}
+		}
+		
+		planejamentoFerias.getTurista().getUsuario().setPlanejamentoFerias(null);
+		planejamentoFerias.getTurista().getUsuario().setPlano(null);
+		planejamentoFerias.getTurista().getUsuario().setTuristas(null);
 		
 		planejamentoFerias.setUsuario(usuario);
+			
 		planejamentoFeriasService.incluir(planejamentoFerias);
 		
 		return "redirect:/planejamentoferias/lista";
